@@ -106,7 +106,6 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="AD_CalendarioPago.vb" />
-    <Compile Include="AD_CLASE_PRUEBA.vb" />
     <Compile Include="AD_Coneccion.vb" />
     <Compile Include="AD_Empleados.vb" />
     <Compile Include="AD_PeriodosDePago.vb" />
