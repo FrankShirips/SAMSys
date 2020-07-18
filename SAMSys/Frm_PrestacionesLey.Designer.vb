@@ -64,22 +64,19 @@ Partial Class Frm_PrestacionesLey
         '
         Me.LayoutControl1.Controls.Add(Me.Grdctrl_Prestaciones)
         Me.LayoutControl1.Dock = System.Windows.Forms.DockStyle.Fill
-        Me.LayoutControl1.Location = New System.Drawing.Point(0, 34)
-        Me.LayoutControl1.Margin = New System.Windows.Forms.Padding(3, 4, 3, 4)
+        Me.LayoutControl1.Location = New System.Drawing.Point(0, 28)
         Me.LayoutControl1.Name = "LayoutControl1"
         Me.LayoutControl1.Root = Me.Root
-        Me.LayoutControl1.Size = New System.Drawing.Size(994, 327)
+        Me.LayoutControl1.Size = New System.Drawing.Size(852, 265)
         Me.LayoutControl1.TabIndex = 0
         Me.LayoutControl1.Text = "LayoutControl1"
         '
         'Grdctrl_Prestaciones
         '
-        Me.Grdctrl_Prestaciones.EmbeddedNavigator.Margin = New System.Windows.Forms.Padding(3, 5, 3, 5)
-        Me.Grdctrl_Prestaciones.Location = New System.Drawing.Point(14, 14)
+        Me.Grdctrl_Prestaciones.Location = New System.Drawing.Point(11, 10)
         Me.Grdctrl_Prestaciones.MainView = Me.BandedGridView1
-        Me.Grdctrl_Prestaciones.Margin = New System.Windows.Forms.Padding(3, 4, 3, 4)
         Me.Grdctrl_Prestaciones.Name = "Grdctrl_Prestaciones"
-        Me.Grdctrl_Prestaciones.Size = New System.Drawing.Size(966, 299)
+        Me.Grdctrl_Prestaciones.Size = New System.Drawing.Size(830, 245)
         Me.Grdctrl_Prestaciones.TabIndex = 4
         Me.Grdctrl_Prestaciones.ViewCollection.AddRange(New DevExpress.XtraGrid.Views.Base.BaseView() {Me.BandedGridView1})
         '
@@ -87,7 +84,6 @@ Partial Class Frm_PrestacionesLey
         '
         Me.BandedGridView1.Bands.AddRange(New DevExpress.XtraGrid.Views.BandedGrid.GridBand() {Me.GridBand1, Me.gridBand2, Me.gridBand3})
         Me.BandedGridView1.Columns.AddRange(New DevExpress.XtraGrid.Views.BandedGrid.BandedGridColumn() {Me.gId, Me.gAño, Me.gInssLab, Me.gnInssPat, Me.gInatec, Me.gVacaciones, Me.gAguinaldo, Me.gIndemnizacion, Me.gInicia, Me.gFin})
-        Me.BandedGridView1.DetailHeight = 431
         Me.BandedGridView1.GridControl = Me.Grdctrl_Prestaciones
         Me.BandedGridView1.Name = "BandedGridView1"
         Me.BandedGridView1.OptionsBehavior.Editable = False
@@ -101,46 +97,41 @@ Partial Class Frm_PrestacionesLey
         Me.GridBand1.Columns.Add(Me.gAño)
         Me.GridBand1.Columns.Add(Me.gInicia)
         Me.GridBand1.Columns.Add(Me.gFin)
-        Me.GridBand1.MinWidth = 12
         Me.GridBand1.Name = "GridBand1"
         Me.GridBand1.VisibleIndex = 0
-        Me.GridBand1.Width = 335
+        Me.GridBand1.Width = 287
         '
         'gId
         '
         Me.gId.Caption = "Id"
         Me.gId.FieldName = "nIdReg"
-        Me.gId.MinWidth = 23
         Me.gId.Name = "gId"
         Me.gId.Visible = True
-        Me.gId.Width = 45
+        Me.gId.Width = 39
         '
         'gAño
         '
         Me.gAño.Caption = "Year"
         Me.gAño.FieldName = "nCodAño"
-        Me.gAño.MinWidth = 23
         Me.gAño.Name = "gAño"
         Me.gAño.Visible = True
-        Me.gAño.Width = 96
+        Me.gAño.Width = 82
         '
         'gInicia
         '
         Me.gInicia.Caption = "Start"
         Me.gInicia.FieldName = "fFechaInicia"
-        Me.gInicia.MinWidth = 23
         Me.gInicia.Name = "gInicia"
         Me.gInicia.Visible = True
-        Me.gInicia.Width = 96
+        Me.gInicia.Width = 82
         '
         'gFin
         '
         Me.gFin.Caption = "End"
         Me.gFin.FieldName = "fFechaFinaliza"
-        Me.gFin.MinWidth = 23
         Me.gFin.Name = "gFin"
         Me.gFin.Visible = True
-        Me.gFin.Width = 98
+        Me.gFin.Width = 84
         '
         'gridBand2
         '
@@ -148,37 +139,33 @@ Partial Class Frm_PrestacionesLey
         Me.gridBand2.Columns.Add(Me.gInssLab)
         Me.gridBand2.Columns.Add(Me.gnInssPat)
         Me.gridBand2.Columns.Add(Me.gInatec)
-        Me.gridBand2.MinWidth = 12
         Me.gridBand2.Name = "gridBand2"
         Me.gridBand2.VisibleIndex = 1
-        Me.gridBand2.Width = 298
+        Me.gridBand2.Width = 255
         '
         'gInssLab
         '
         Me.gInssLab.Caption = "Laboral"
         Me.gInssLab.FieldName = "nInssLab"
-        Me.gInssLab.MinWidth = 23
         Me.gInssLab.Name = "gInssLab"
         Me.gInssLab.Visible = True
-        Me.gInssLab.Width = 97
+        Me.gInssLab.Width = 83
         '
         'gnInssPat
         '
         Me.gnInssPat.Caption = "Patronal"
         Me.gnInssPat.FieldName = "nInssPat"
-        Me.gnInssPat.MinWidth = 23
         Me.gnInssPat.Name = "gnInssPat"
         Me.gnInssPat.Visible = True
-        Me.gnInssPat.Width = 97
+        Me.gnInssPat.Width = 83
         '
         'gInatec
         '
         Me.gInatec.Caption = "Inatec"
         Me.gInatec.FieldName = "nInatec"
-        Me.gInatec.MinWidth = 23
         Me.gInatec.Name = "gInatec"
         Me.gInatec.Visible = True
-        Me.gInatec.Width = 104
+        Me.gInatec.Width = 89
         '
         'gridBand3
         '
@@ -186,37 +173,33 @@ Partial Class Frm_PrestacionesLey
         Me.gridBand3.Columns.Add(Me.gVacaciones)
         Me.gridBand3.Columns.Add(Me.gAguinaldo)
         Me.gridBand3.Columns.Add(Me.gIndemnizacion)
-        Me.gridBand3.MinWidth = 12
         Me.gridBand3.Name = "gridBand3"
         Me.gridBand3.VisibleIndex = 2
-        Me.gridBand3.Width = 302
+        Me.gridBand3.Width = 259
         '
         'gVacaciones
         '
         Me.gVacaciones.Caption = "Holidays"
         Me.gVacaciones.FieldName = "nVacaciones"
-        Me.gVacaciones.MinWidth = 23
         Me.gVacaciones.Name = "gVacaciones"
         Me.gVacaciones.Visible = True
-        Me.gVacaciones.Width = 99
+        Me.gVacaciones.Width = 85
         '
         'gAguinaldo
         '
         Me.gAguinaldo.Caption = "Bonus"
         Me.gAguinaldo.FieldName = "nTreceavo"
-        Me.gAguinaldo.MinWidth = 23
         Me.gAguinaldo.Name = "gAguinaldo"
         Me.gAguinaldo.Visible = True
-        Me.gAguinaldo.Width = 99
+        Me.gAguinaldo.Width = 85
         '
         'gIndemnizacion
         '
         Me.gIndemnizacion.Caption = "Compensation"
         Me.gIndemnizacion.FieldName = "nIndemnizacion"
-        Me.gIndemnizacion.MinWidth = 23
         Me.gIndemnizacion.Name = "gIndemnizacion"
         Me.gIndemnizacion.Visible = True
-        Me.gIndemnizacion.Width = 104
+        Me.gIndemnizacion.Width = 89
         '
         'Root
         '
@@ -224,7 +207,7 @@ Partial Class Frm_PrestacionesLey
         Me.Root.GroupBordersVisible = False
         Me.Root.Items.AddRange(New DevExpress.XtraLayout.BaseLayoutItem() {Me.LayoutControlItem1})
         Me.Root.Name = "Root"
-        Me.Root.Size = New System.Drawing.Size(994, 327)
+        Me.Root.Size = New System.Drawing.Size(852, 265)
         Me.Root.TextVisible = False
         '
         'LayoutControlItem1
@@ -232,7 +215,7 @@ Partial Class Frm_PrestacionesLey
         Me.LayoutControlItem1.Control = Me.Grdctrl_Prestaciones
         Me.LayoutControlItem1.Location = New System.Drawing.Point(0, 0)
         Me.LayoutControlItem1.Name = "LayoutControlItem1"
-        Me.LayoutControlItem1.Size = New System.Drawing.Size(970, 303)
+        Me.LayoutControlItem1.Size = New System.Drawing.Size(834, 249)
         Me.LayoutControlItem1.TextSize = New System.Drawing.Size(0, 0)
         Me.LayoutControlItem1.TextVisible = False
         '
@@ -274,35 +257,31 @@ Partial Class Frm_PrestacionesLey
         Me.barDockControlTop.Dock = System.Windows.Forms.DockStyle.Top
         Me.barDockControlTop.Location = New System.Drawing.Point(0, 0)
         Me.barDockControlTop.Manager = Me.BarManager1
-        Me.barDockControlTop.Margin = New System.Windows.Forms.Padding(3, 4, 3, 4)
-        Me.barDockControlTop.Size = New System.Drawing.Size(994, 34)
+        Me.barDockControlTop.Size = New System.Drawing.Size(852, 28)
         '
         'barDockControlBottom
         '
         Me.barDockControlBottom.CausesValidation = False
         Me.barDockControlBottom.Dock = System.Windows.Forms.DockStyle.Bottom
-        Me.barDockControlBottom.Location = New System.Drawing.Point(0, 361)
+        Me.barDockControlBottom.Location = New System.Drawing.Point(0, 293)
         Me.barDockControlBottom.Manager = Me.BarManager1
-        Me.barDockControlBottom.Margin = New System.Windows.Forms.Padding(3, 4, 3, 4)
-        Me.barDockControlBottom.Size = New System.Drawing.Size(994, 0)
+        Me.barDockControlBottom.Size = New System.Drawing.Size(852, 0)
         '
         'barDockControlLeft
         '
         Me.barDockControlLeft.CausesValidation = False
         Me.barDockControlLeft.Dock = System.Windows.Forms.DockStyle.Left
-        Me.barDockControlLeft.Location = New System.Drawing.Point(0, 34)
+        Me.barDockControlLeft.Location = New System.Drawing.Point(0, 28)
         Me.barDockControlLeft.Manager = Me.BarManager1
-        Me.barDockControlLeft.Margin = New System.Windows.Forms.Padding(3, 4, 3, 4)
-        Me.barDockControlLeft.Size = New System.Drawing.Size(0, 327)
+        Me.barDockControlLeft.Size = New System.Drawing.Size(0, 265)
         '
         'barDockControlRight
         '
         Me.barDockControlRight.CausesValidation = False
         Me.barDockControlRight.Dock = System.Windows.Forms.DockStyle.Right
-        Me.barDockControlRight.Location = New System.Drawing.Point(994, 34)
+        Me.barDockControlRight.Location = New System.Drawing.Point(852, 28)
         Me.barDockControlRight.Manager = Me.BarManager1
-        Me.barDockControlRight.Margin = New System.Windows.Forms.Padding(3, 4, 3, 4)
-        Me.barDockControlRight.Size = New System.Drawing.Size(0, 327)
+        Me.barDockControlRight.Size = New System.Drawing.Size(0, 265)
         '
         'CmdEditar
         '
@@ -336,16 +315,15 @@ Partial Class Frm_PrestacionesLey
         '
         'Frm_PrestacionesLey
         '
-        Me.AutoScaleDimensions = New System.Drawing.SizeF(7.0!, 16.0!)
+        Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
-        Me.ClientSize = New System.Drawing.Size(994, 361)
+        Me.ClientSize = New System.Drawing.Size(852, 293)
         Me.Controls.Add(Me.LayoutControl1)
         Me.Controls.Add(Me.barDockControlLeft)
         Me.Controls.Add(Me.barDockControlRight)
         Me.Controls.Add(Me.barDockControlBottom)
         Me.Controls.Add(Me.barDockControlTop)
         Me.IconOptions.ShowIcon = False
-        Me.Margin = New System.Windows.Forms.Padding(3, 4, 3, 4)
         Me.MaximizeBox = False
         Me.MinimizeBox = False
         Me.Name = "Frm_PrestacionesLey"

@@ -71,12 +71,18 @@
     <Import Include="System" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="EN_ConceptoDuracion.vb" />
+    <Compile Include="EN_TipoDuracion.vb" />
     <Compile Include="EN_CalendarioDePago.vb" />
+    <Compile Include="EN_DeduccionEPP.vb" />
+    <Compile Include="EN_DeduccionClinica.vb" />
     <Compile Include="EN_Empleados.vb" />
+    <Compile Include="EN_IR.vb" />
     <Compile Include="EN_PeriodosPago.vb" />
     <Compile Include="EN_PrestacionesLey.vb" />
     <Compile Include="EN_Puestos.vb" />
     <Compile Include="EN_TipoMoneda.vb" />
+    <Compile Include="EN_VacPerm.vb" />
     <Compile Include="My Project\Application.Designer.vb">
       <AutoGen>True</AutoGen>
       <DependentUpon>Application.myapp</DependentUpon>

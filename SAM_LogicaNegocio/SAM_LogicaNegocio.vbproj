@@ -74,10 +74,14 @@
   <ItemGroup>
     <Compile Include="GetConn.vb" />
     <Compile Include="LN_CalendarioPago.vb" />
+    <Compile Include="LN_DeduccionEPP.vb" />
+    <Compile Include="LN_DeduccionClinica.vb" />
     <Compile Include="LN_Empleados.vb" />
+    <Compile Include="LN_IR.vb" />
     <Compile Include="LN_PeriodosDePago.vb" />
     <Compile Include="LN_Prestaciones.vb" />
     <Compile Include="LN_TipoMoneda.vb" />
+    <Compile Include="LN_VacPerm.vb" />
     <Compile Include="My Project\Application.Designer.vb">
       <AutoGen>True</AutoGen>
       <DependentUpon>Application.myapp</DependentUpon>

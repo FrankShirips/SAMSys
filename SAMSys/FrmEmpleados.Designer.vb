@@ -30,7 +30,7 @@ Partial Class FrmEmpleados
         Me.CmdEmp_Cancel = New DevExpress.XtraBars.BarButtonItem()
         Me.CmeEmp_Delete = New DevExpress.XtraBars.BarButtonItem()
         Me.CmdEmp_CatEmpInforme = New DevExpress.XtraBars.BarButtonItem()
-        Me.BarButtonItem3 = New DevExpress.XtraBars.BarButtonItem()
+        Me.CmdNuevoEmpleado = New DevExpress.XtraBars.BarButtonItem()
         Me.Bar3 = New DevExpress.XtraBars.Bar()
         Me.barDockControlTop = New DevExpress.XtraBars.BarDockControl()
         Me.barDockControlBottom = New DevExpress.XtraBars.BarDockControl()
@@ -41,6 +41,7 @@ Partial Class FrmEmpleados
         Me.CmdEmp_ResetChanges = New DevExpress.XtraBars.BarButtonItem()
         Me.BarEditItem1 = New DevExpress.XtraBars.BarEditItem()
         Me.RepositoryItemSearchControl1 = New DevExpress.XtraEditors.Repository.RepositoryItemSearchControl()
+        Me.BarButtonItem3 = New DevExpress.XtraBars.BarButtonItem()
         Me.LayoutControl1 = New DevExpress.XtraLayout.LayoutControl()
         Me.GroupControl3 = New DevExpress.XtraEditors.GroupControl()
         Me.CboEditarContrato = New DevExpress.XtraEditors.SimpleButton()
@@ -113,7 +114,7 @@ Partial Class FrmEmpleados
         Me.LayoutControlItem9 = New DevExpress.XtraLayout.LayoutControlItem()
         Me.LayoutControlItem14 = New DevExpress.XtraLayout.LayoutControlItem()
         Me.LayoutControlItem24 = New DevExpress.XtraLayout.LayoutControlItem()
-        Me.CmdNuevoEmpleado = New DevExpress.XtraBars.BarButtonItem()
+        Me.EmptySpaceItem1 = New DevExpress.XtraLayout.EmptySpaceItem()
         CType(Me.BarraAdmonEmpleados, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.RepositoryItemSearchControl1, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.LayoutControl1, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -191,6 +192,7 @@ Partial Class FrmEmpleados
         CType(Me.LayoutControlItem9, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.LayoutControlItem14, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.LayoutControlItem24, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.EmptySpaceItem1, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
         'BarraAdmonEmpleados
@@ -276,14 +278,14 @@ Partial Class FrmEmpleados
         Me.CmdEmp_CatEmpInforme.Name = "CmdEmp_CatEmpInforme"
         Me.CmdEmp_CatEmpInforme.PaintStyle = DevExpress.XtraBars.BarItemPaintStyle.CaptionGlyph
         '
-        'BarButtonItem3
+        'CmdNuevoEmpleado
         '
-        Me.BarButtonItem3.Alignment = DevExpress.XtraBars.BarItemLinkAlignment.Right
-        Me.BarButtonItem3.Caption = "Payment History"
-        Me.BarButtonItem3.Id = 11
-        Me.BarButtonItem3.ImageOptions.SvgImage = CType(resources.GetObject("BarButtonItem3.ImageOptions.SvgImage"), DevExpress.Utils.Svg.SvgImage)
-        Me.BarButtonItem3.Name = "BarButtonItem3"
-        Me.BarButtonItem3.PaintStyle = DevExpress.XtraBars.BarItemPaintStyle.CaptionGlyph
+        Me.CmdNuevoEmpleado.Alignment = DevExpress.XtraBars.BarItemLinkAlignment.Right
+        Me.CmdNuevoEmpleado.Caption = "New"
+        Me.CmdNuevoEmpleado.Id = 12
+        Me.CmdNuevoEmpleado.ImageOptions.SvgImage = CType(resources.GetObject("CmdNuevoEmpleado.ImageOptions.SvgImage"), DevExpress.Utils.Svg.SvgImage)
+        Me.CmdNuevoEmpleado.Name = "CmdNuevoEmpleado"
+        Me.CmdNuevoEmpleado.PaintStyle = DevExpress.XtraBars.BarItemPaintStyle.CaptionGlyph
         '
         'Bar3
         '
@@ -364,6 +366,15 @@ Partial Class FrmEmpleados
         Me.RepositoryItemSearchControl1.Buttons.AddRange(New DevExpress.XtraEditors.Controls.EditorButton() {New DevExpress.XtraEditors.Repository.ClearButton(), New DevExpress.XtraEditors.Repository.SearchButton()})
         Me.RepositoryItemSearchControl1.Name = "RepositoryItemSearchControl1"
         '
+        'BarButtonItem3
+        '
+        Me.BarButtonItem3.Alignment = DevExpress.XtraBars.BarItemLinkAlignment.Right
+        Me.BarButtonItem3.Caption = "Payment History"
+        Me.BarButtonItem3.Id = 11
+        Me.BarButtonItem3.ImageOptions.SvgImage = CType(resources.GetObject("BarButtonItem3.ImageOptions.SvgImage"), DevExpress.Utils.Svg.SvgImage)
+        Me.BarButtonItem3.Name = "BarButtonItem3"
+        Me.BarButtonItem3.PaintStyle = DevExpress.XtraBars.BarItemPaintStyle.CaptionGlyph
+        '
         'LayoutControl1
         '
         Me.LayoutControl1.Controls.Add(Me.GroupControl3)
@@ -376,6 +387,7 @@ Partial Class FrmEmpleados
         Me.LayoutControl1.Dock = System.Windows.Forms.DockStyle.Fill
         Me.LayoutControl1.Location = New System.Drawing.Point(0, 28)
         Me.LayoutControl1.Name = "LayoutControl1"
+        Me.LayoutControl1.OptionsCustomizationForm.DesignTimeCustomizationFormPositionAndSize = New System.Drawing.Rectangle(649, 102, 650, 394)
         Me.LayoutControl1.Root = Me.Root
         Me.LayoutControl1.Size = New System.Drawing.Size(879, 554)
         Me.LayoutControl1.TabIndex = 4
@@ -958,7 +970,7 @@ Partial Class FrmEmpleados
         Me.GrdCtrEmp_Listado.MainView = Me.GrdVw_Listado
         Me.GrdCtrEmp_Listado.MenuManager = Me.BarraAdmonEmpleados
         Me.GrdCtrEmp_Listado.Name = "GrdCtrEmp_Listado"
-        Me.GrdCtrEmp_Listado.Size = New System.Drawing.Size(347, 514)
+        Me.GrdCtrEmp_Listado.Size = New System.Drawing.Size(347, 247)
         Me.GrdCtrEmp_Listado.TabIndex = 10
         Me.GrdCtrEmp_Listado.ViewCollection.AddRange(New DevExpress.XtraGrid.Views.Base.BaseView() {Me.GrdVw_Listado})
         '
@@ -1013,7 +1025,7 @@ Partial Class FrmEmpleados
         '
         Me.Root.EnableIndentsWithoutBorders = DevExpress.Utils.DefaultBoolean.[True]
         Me.Root.GroupBordersVisible = False
-        Me.Root.Items.AddRange(New DevExpress.XtraLayout.BaseLayoutItem() {Me.LayoutControlItem7, Me.SimpleSeparator1, Me.LayoutControlItem6, Me.LayoutControlItem1, Me.LayoutControlItem8, Me.LayoutControlItem9, Me.LayoutControlItem14, Me.LayoutControlItem24})
+        Me.Root.Items.AddRange(New DevExpress.XtraLayout.BaseLayoutItem() {Me.LayoutControlItem7, Me.SimpleSeparator1, Me.LayoutControlItem6, Me.LayoutControlItem1, Me.LayoutControlItem8, Me.LayoutControlItem9, Me.LayoutControlItem14, Me.LayoutControlItem24, Me.EmptySpaceItem1})
         Me.Root.Name = "Root"
         Me.Root.Size = New System.Drawing.Size(879, 554)
         Me.Root.TextVisible = False
@@ -1023,7 +1035,7 @@ Partial Class FrmEmpleados
         Me.LayoutControlItem7.Control = Me.GrdCtrEmp_Listado
         Me.LayoutControlItem7.Location = New System.Drawing.Point(0, 0)
         Me.LayoutControlItem7.Name = "LayoutControlItem7"
-        Me.LayoutControlItem7.Size = New System.Drawing.Size(351, 534)
+        Me.LayoutControlItem7.Size = New System.Drawing.Size(351, 267)
         Me.LayoutControlItem7.Text = "List of employees by position"
         Me.LayoutControlItem7.TextLocation = DevExpress.Utils.Locations.Top
         Me.LayoutControlItem7.TextSize = New System.Drawing.Size(138, 13)
@@ -1095,14 +1107,13 @@ Partial Class FrmEmpleados
         Me.LayoutControlItem24.TextSize = New System.Drawing.Size(0, 0)
         Me.LayoutControlItem24.TextVisible = False
         '
-        'CmdNuevoEmpleado
+        'EmptySpaceItem1
         '
-        Me.CmdNuevoEmpleado.Alignment = DevExpress.XtraBars.BarItemLinkAlignment.Right
-        Me.CmdNuevoEmpleado.Caption = "New"
-        Me.CmdNuevoEmpleado.Id = 12
-        Me.CmdNuevoEmpleado.ImageOptions.SvgImage = CType(resources.GetObject("BarButtonItem4.ImageOptions.SvgImage"), DevExpress.Utils.Svg.SvgImage)
-        Me.CmdNuevoEmpleado.Name = "CmdNuevoEmpleado"
-        Me.CmdNuevoEmpleado.PaintStyle = DevExpress.XtraBars.BarItemPaintStyle.CaptionGlyph
+        Me.EmptySpaceItem1.AllowHotTrack = False
+        Me.EmptySpaceItem1.Location = New System.Drawing.Point(0, 267)
+        Me.EmptySpaceItem1.Name = "EmptySpaceItem1"
+        Me.EmptySpaceItem1.Size = New System.Drawing.Size(351, 267)
+        Me.EmptySpaceItem1.TextSize = New System.Drawing.Size(0, 0)
         '
         'FrmEmpleados
         '
@@ -1114,9 +1125,9 @@ Partial Class FrmEmpleados
         Me.Controls.Add(Me.barDockControlRight)
         Me.Controls.Add(Me.barDockControlBottom)
         Me.Controls.Add(Me.barDockControlTop)
+        Me.IconOptions.ShowIcon = False
         Me.MaximizeBox = False
         Me.Name = "FrmEmpleados"
-        Me.ShowIcon = False
         Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen
         Me.Text = "..:: Manage Employees"
         CType(Me.BarraAdmonEmpleados, System.ComponentModel.ISupportInitialize).EndInit()
@@ -1196,6 +1207,7 @@ Partial Class FrmEmpleados
         CType(Me.LayoutControlItem9, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.LayoutControlItem14, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.LayoutControlItem24, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.EmptySpaceItem1, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)
         Me.PerformLayout()
 
@@ -1294,4 +1306,5 @@ Partial Class FrmEmpleados
     Friend WithEvents LayoutControlItem24 As DevExpress.XtraLayout.LayoutControlItem
     Friend WithEvents BarButtonItem3 As DevExpress.XtraBars.BarButtonItem
     Friend WithEvents CmdNuevoEmpleado As DevExpress.XtraBars.BarButtonItem
+    Friend WithEvents EmptySpaceItem1 As DevExpress.XtraLayout.EmptySpaceItem
 End Class
