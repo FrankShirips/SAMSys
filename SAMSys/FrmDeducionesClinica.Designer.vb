@@ -20,39 +20,21 @@ Partial Class FrmDeducionesClinica
     <System.Diagnostics.DebuggerStepThrough()>
     Private Sub InitializeComponent()
         Me.components = New System.ComponentModel.Container()
-        Dim SuperToolTip1 As DevExpress.Utils.SuperToolTip = New DevExpress.Utils.SuperToolTip()
-        Dim ToolTipTitleItem1 As DevExpress.Utils.ToolTipTitleItem = New DevExpress.Utils.ToolTipTitleItem()
-        Dim ToolTipItem1 As DevExpress.Utils.ToolTipItem = New DevExpress.Utils.ToolTipItem()
-        Dim SuperToolTip2 As DevExpress.Utils.SuperToolTip = New DevExpress.Utils.SuperToolTip()
-        Dim ToolTipTitleItem2 As DevExpress.Utils.ToolTipTitleItem = New DevExpress.Utils.ToolTipTitleItem()
-        Dim ToolTipItem2 As DevExpress.Utils.ToolTipItem = New DevExpress.Utils.ToolTipItem()
+        Dim SuperToolTip7 As DevExpress.Utils.SuperToolTip = New DevExpress.Utils.SuperToolTip()
+        Dim ToolTipTitleItem7 As DevExpress.Utils.ToolTipTitleItem = New DevExpress.Utils.ToolTipTitleItem()
+        Dim ToolTipItem7 As DevExpress.Utils.ToolTipItem = New DevExpress.Utils.ToolTipItem()
+        Dim SuperToolTip8 As DevExpress.Utils.SuperToolTip = New DevExpress.Utils.SuperToolTip()
+        Dim ToolTipTitleItem8 As DevExpress.Utils.ToolTipTitleItem = New DevExpress.Utils.ToolTipTitleItem()
+        Dim ToolTipItem8 As DevExpress.Utils.ToolTipItem = New DevExpress.Utils.ToolTipItem()
         Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(FrmDeducionesClinica))
-        Dim SuperToolTip3 As DevExpress.Utils.SuperToolTip = New DevExpress.Utils.SuperToolTip()
-        Dim ToolTipTitleItem3 As DevExpress.Utils.ToolTipTitleItem = New DevExpress.Utils.ToolTipTitleItem()
-        Dim ToolTipItem3 As DevExpress.Utils.ToolTipItem = New DevExpress.Utils.ToolTipItem()
-        Dim SuperToolTip4 As DevExpress.Utils.SuperToolTip = New DevExpress.Utils.SuperToolTip()
-        Dim ToolTipTitleItem4 As DevExpress.Utils.ToolTipTitleItem = New DevExpress.Utils.ToolTipTitleItem()
-        Dim ToolTipItem4 As DevExpress.Utils.ToolTipItem = New DevExpress.Utils.ToolTipItem()
+        Dim SuperToolTip5 As DevExpress.Utils.SuperToolTip = New DevExpress.Utils.SuperToolTip()
+        Dim ToolTipTitleItem5 As DevExpress.Utils.ToolTipTitleItem = New DevExpress.Utils.ToolTipTitleItem()
+        Dim ToolTipItem5 As DevExpress.Utils.ToolTipItem = New DevExpress.Utils.ToolTipItem()
+        Dim SuperToolTip6 As DevExpress.Utils.SuperToolTip = New DevExpress.Utils.SuperToolTip()
+        Dim ToolTipTitleItem6 As DevExpress.Utils.ToolTipTitleItem = New DevExpress.Utils.ToolTipTitleItem()
+        Dim ToolTipItem6 As DevExpress.Utils.ToolTipItem = New DevExpress.Utils.ToolTipItem()
         Me.SplitContainerControl = New DevExpress.XtraEditors.SplitContainerControl()
-        Me.GroupControl = New DevExpress.XtraEditors.GroupControl()
-        Me.btnSave = New DevExpress.XtraEditors.SimpleButton()
-        Me.txtMonto = New DevExpress.XtraEditors.TextEdit()
-        Me.mmConcepto = New DevExpress.XtraEditors.MemoEdit()
-        Me.txtProyecto = New DevExpress.XtraEditors.TextEdit()
-        Me.txtNombre = New DevExpress.XtraEditors.TextEdit()
-        Me.txtNEmpleado = New DevExpress.XtraEditors.TextEdit()
-        Me.LabelControl7 = New DevExpress.XtraEditors.LabelControl()
-        Me.LabelControl6 = New DevExpress.XtraEditors.LabelControl()
-        Me.dtFecha = New DevExpress.XtraEditors.DateEdit()
-        Me.LabelControl5 = New DevExpress.XtraEditors.LabelControl()
-        Me.LabelControl4 = New DevExpress.XtraEditors.LabelControl()
-        Me.LabelControl3 = New DevExpress.XtraEditors.LabelControl()
-        Me.LabelControl2 = New DevExpress.XtraEditors.LabelControl()
-        Me.txtNFactura = New DevExpress.XtraEditors.TextEdit()
-        Me.LabelControl1 = New DevExpress.XtraEditors.LabelControl()
-        Me.GridSplitContainer1 = New DevExpress.XtraGrid.GridSplitContainer()
-        Me.gdcDeducClinic = New DevExpress.XtraGrid.GridControl()
-        Me.gdvDeducClinic = New DevExpress.XtraGrid.Views.Grid.GridView()
+        Me.DefaultToolTipController = New DevExpress.Utils.DefaultToolTipController(Me.components)
         Me.PopupControlContainer = New DevExpress.XtraBars.PopupControlContainer(Me.components)
         Me.SpreadsheetControl = New DevExpress.XtraSpreadsheet.SpreadsheetControl()
         Me.BarManager = New DevExpress.XtraBars.BarManager(Me.components)
@@ -67,30 +49,48 @@ Partial Class FrmDeducionesClinica
         Me.barDockControlLeft = New DevExpress.XtraBars.BarDockControl()
         Me.barDockControlRight = New DevExpress.XtraBars.BarDockControl()
         Me.btnSaveExcel = New DevExpress.XtraEditors.SimpleButton()
+        Me.GridSplitContainer1 = New DevExpress.XtraGrid.GridSplitContainer()
+        Me.gdcDeducClinic = New DevExpress.XtraGrid.GridControl()
+        Me.gdvDeducClinic = New DevExpress.XtraGrid.Views.Grid.GridView()
         Me.ImageCollection = New DevExpress.Utils.ImageCollection(Me.components)
-        Me.DxErrorProvider = New DevExpress.XtraEditors.DXErrorProvider.DXErrorProvider(Me.components)
-        Me.DefaultToolTipController = New DevExpress.Utils.DefaultToolTipController(Me.components)
+        Me.DxValidationProvider = New DevExpress.XtraEditors.DXErrorProvider.DXValidationProvider(Me.components)
+        Me.GroupControl = New DevExpress.XtraEditors.GroupControl()
+        Me.LabelControl1 = New DevExpress.XtraEditors.LabelControl()
+        Me.txtNFactura = New DevExpress.XtraEditors.TextEdit()
+        Me.LabelControl2 = New DevExpress.XtraEditors.LabelControl()
+        Me.LabelControl3 = New DevExpress.XtraEditors.LabelControl()
+        Me.LabelControl4 = New DevExpress.XtraEditors.LabelControl()
+        Me.LabelControl5 = New DevExpress.XtraEditors.LabelControl()
+        Me.dtFecha = New DevExpress.XtraEditors.DateEdit()
+        Me.LabelControl6 = New DevExpress.XtraEditors.LabelControl()
+        Me.LabelControl7 = New DevExpress.XtraEditors.LabelControl()
+        Me.txtNEmpleado = New DevExpress.XtraEditors.TextEdit()
+        Me.txtNombre = New DevExpress.XtraEditors.TextEdit()
+        Me.txtProyecto = New DevExpress.XtraEditors.TextEdit()
+        Me.mmConcepto = New DevExpress.XtraEditors.MemoEdit()
+        Me.txtMonto = New DevExpress.XtraEditors.TextEdit()
+        Me.btnSave = New DevExpress.XtraEditors.SimpleButton()
         CType(Me.SplitContainerControl, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SplitContainerControl.SuspendLayout()
-        CType(Me.GroupControl, System.ComponentModel.ISupportInitialize).BeginInit()
-        Me.GroupControl.SuspendLayout()
-        CType(Me.txtMonto.Properties, System.ComponentModel.ISupportInitialize).BeginInit()
-        CType(Me.mmConcepto.Properties, System.ComponentModel.ISupportInitialize).BeginInit()
-        CType(Me.txtProyecto.Properties, System.ComponentModel.ISupportInitialize).BeginInit()
-        CType(Me.txtNombre.Properties, System.ComponentModel.ISupportInitialize).BeginInit()
-        CType(Me.txtNEmpleado.Properties, System.ComponentModel.ISupportInitialize).BeginInit()
-        CType(Me.dtFecha.Properties.CalendarTimeProperties, System.ComponentModel.ISupportInitialize).BeginInit()
-        CType(Me.dtFecha.Properties, System.ComponentModel.ISupportInitialize).BeginInit()
-        CType(Me.txtNFactura.Properties, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.PopupControlContainer, System.ComponentModel.ISupportInitialize).BeginInit()
+        Me.PopupControlContainer.SuspendLayout()
+        CType(Me.BarManager, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.GridSplitContainer1, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.GridSplitContainer1.SuspendLayout()
         CType(Me.gdcDeducClinic, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.gdvDeducClinic, System.ComponentModel.ISupportInitialize).BeginInit()
-        CType(Me.PopupControlContainer, System.ComponentModel.ISupportInitialize).BeginInit()
-        Me.PopupControlContainer.SuspendLayout()
-        CType(Me.BarManager, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.ImageCollection, System.ComponentModel.ISupportInitialize).BeginInit()
-        CType(Me.DxErrorProvider, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.DxValidationProvider, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.GroupControl, System.ComponentModel.ISupportInitialize).BeginInit()
+        Me.GroupControl.SuspendLayout()
+        CType(Me.txtNFactura.Properties, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.dtFecha.Properties.CalendarTimeProperties, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.dtFecha.Properties, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.txtNEmpleado.Properties, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.txtNombre.Properties, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.txtProyecto.Properties, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.mmConcepto.Properties, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.txtMonto.Properties, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
         'SplitContainerControl
@@ -109,203 +109,12 @@ Partial Class FrmDeducionesClinica
         Me.SplitContainerControl.TabIndex = 0
         Me.SplitContainerControl.ToolTipController = Me.DefaultToolTipController.DefaultController
         '
-        'GroupControl
+        'DefaultToolTipController
         '
-        Me.GroupControl.AutoSize = True
-        Me.GroupControl.Controls.Add(Me.btnSave)
-        Me.GroupControl.Controls.Add(Me.txtMonto)
-        Me.GroupControl.Controls.Add(Me.mmConcepto)
-        Me.GroupControl.Controls.Add(Me.txtProyecto)
-        Me.GroupControl.Controls.Add(Me.txtNombre)
-        Me.GroupControl.Controls.Add(Me.txtNEmpleado)
-        Me.GroupControl.Controls.Add(Me.LabelControl7)
-        Me.GroupControl.Controls.Add(Me.LabelControl6)
-        Me.GroupControl.Controls.Add(Me.dtFecha)
-        Me.GroupControl.Controls.Add(Me.LabelControl5)
-        Me.GroupControl.Controls.Add(Me.LabelControl4)
-        Me.GroupControl.Controls.Add(Me.LabelControl3)
-        Me.GroupControl.Controls.Add(Me.LabelControl2)
-        Me.GroupControl.Controls.Add(Me.txtNFactura)
-        Me.GroupControl.Controls.Add(Me.LabelControl1)
-        Me.GroupControl.Dock = System.Windows.Forms.DockStyle.Fill
-        Me.GroupControl.Location = New System.Drawing.Point(0, 0)
-        Me.GroupControl.Name = "GroupControl"
-        Me.GroupControl.Size = New System.Drawing.Size(364, 423)
-        Me.GroupControl.TabIndex = 0
-        Me.GroupControl.Text = "INGRESO DE DEDUCCION DE CLINICA"
-        Me.GroupControl.ToolTipController = Me.DefaultToolTipController.DefaultController
         '
-        'btnSave
         '
-        Me.btnSave.Appearance.BackColor = DevExpress.LookAndFeel.DXSkinColors.FillColors.Success
-        Me.btnSave.Appearance.Options.UseBackColor = True
-        Me.btnSave.ImageOptions.SvgImageColorizationMode = DevExpress.Utils.SvgImageColorizationMode.CommonPalette
-        Me.btnSave.Location = New System.Drawing.Point(93, 288)
-        Me.btnSave.Name = "btnSave"
-        Me.btnSave.Size = New System.Drawing.Size(258, 28)
-        Me.btnSave.TabIndex = 29
-        Me.btnSave.Text = "&GUARDAR"
         '
-        'txtMonto
-        '
-        Me.txtMonto.Location = New System.Drawing.Point(92, 262)
-        Me.txtMonto.Name = "txtMonto"
-        Me.txtMonto.Properties.DisplayFormat.FormatString = "c"
-        Me.txtMonto.Properties.DisplayFormat.FormatType = DevExpress.Utils.FormatType.Numeric
-        Me.txtMonto.Properties.EditFormat.FormatString = "c"
-        Me.txtMonto.Properties.EditFormat.FormatType = DevExpress.Utils.FormatType.Numeric
-        Me.txtMonto.Properties.Mask.EditMask = "c"
-        Me.txtMonto.Properties.Mask.MaskType = DevExpress.XtraEditors.Mask.MaskType.Numeric
-        Me.txtMonto.Properties.Mask.UseMaskAsDisplayFormat = True
-        Me.txtMonto.Size = New System.Drawing.Size(258, 20)
-        Me.txtMonto.TabIndex = 28
-        '
-        'mmConcepto
-        '
-        Me.mmConcepto.EditValue = ""
-        Me.mmConcepto.Location = New System.Drawing.Point(92, 160)
-        Me.mmConcepto.Name = "mmConcepto"
-        Me.mmConcepto.Properties.LinesCount = 4
-        Me.mmConcepto.Size = New System.Drawing.Size(258, 96)
-        Me.mmConcepto.TabIndex = 27
-        '
-        'txtProyecto
-        '
-        Me.txtProyecto.Location = New System.Drawing.Point(92, 134)
-        Me.txtProyecto.Name = "txtProyecto"
-        Me.txtProyecto.Size = New System.Drawing.Size(258, 20)
-        Me.txtProyecto.TabIndex = 26
-        '
-        'txtNombre
-        '
-        Me.txtNombre.Location = New System.Drawing.Point(92, 108)
-        Me.txtNombre.Name = "txtNombre"
-        Me.txtNombre.Size = New System.Drawing.Size(258, 20)
-        Me.txtNombre.TabIndex = 25
-        '
-        'txtNEmpleado
-        '
-        Me.txtNEmpleado.Location = New System.Drawing.Point(0, -123)
-        Me.txtNEmpleado.Name = "txtNEmpleado"
-        Me.txtNEmpleado.Size = New System.Drawing.Size(258, 20)
-        Me.txtNEmpleado.TabIndex = 24
-        '
-        'LabelControl7
-        '
-        Me.LabelControl7.Appearance.Font = New System.Drawing.Font("Tahoma", 8.25!, System.Drawing.FontStyle.Bold)
-        Me.LabelControl7.Appearance.Options.UseFont = True
-        Me.LabelControl7.Location = New System.Drawing.Point(15, 266)
-        Me.LabelControl7.Name = "LabelControl7"
-        Me.LabelControl7.Size = New System.Drawing.Size(73, 13)
-        Me.LabelControl7.TabIndex = 23
-        Me.LabelControl7.Text = "Monto en C$:"
-        '
-        'LabelControl6
-        '
-        Me.LabelControl6.Appearance.Font = New System.Drawing.Font("Tahoma", 8.25!, System.Drawing.FontStyle.Bold)
-        Me.LabelControl6.Appearance.Options.UseFont = True
-        Me.LabelControl6.Location = New System.Drawing.Point(32, 162)
-        Me.LabelControl6.Name = "LabelControl6"
-        Me.LabelControl6.Size = New System.Drawing.Size(56, 13)
-        Me.LabelControl6.TabIndex = 22
-        Me.LabelControl6.Text = "Concepto:"
-        '
-        'dtFecha
-        '
-        Me.dtFecha.EditValue = New Date(2020, 7, 15, 23, 20, 13, 620)
-        Me.dtFecha.Location = New System.Drawing.Point(92, 56)
-        Me.dtFecha.Name = "dtFecha"
-        Me.dtFecha.Properties.Buttons.AddRange(New DevExpress.XtraEditors.Controls.EditorButton() {New DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)})
-        Me.dtFecha.Properties.CalendarTimeProperties.Buttons.AddRange(New DevExpress.XtraEditors.Controls.EditorButton() {New DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)})
-        Me.dtFecha.Properties.Mask.UseMaskAsDisplayFormat = True
-        Me.dtFecha.Properties.MaxValue = New Date(CType(0, Long))
-        Me.dtFecha.Properties.ShowYearNavigationButtons = DevExpress.Utils.DefaultBoolean.[True]
-        Me.dtFecha.Size = New System.Drawing.Size(258, 20)
-        Me.dtFecha.TabIndex = 21
-        '
-        'LabelControl5
-        '
-        Me.LabelControl5.Appearance.Font = New System.Drawing.Font("Tahoma", 8.25!, System.Drawing.FontStyle.Bold)
-        Me.LabelControl5.Appearance.Options.UseFont = True
-        Me.LabelControl5.Location = New System.Drawing.Point(34, 138)
-        Me.LabelControl5.Name = "LabelControl5"
-        Me.LabelControl5.Size = New System.Drawing.Size(54, 13)
-        Me.LabelControl5.TabIndex = 20
-        Me.LabelControl5.Text = "Proyecto:"
-        '
-        'LabelControl4
-        '
-        Me.LabelControl4.Appearance.Font = New System.Drawing.Font("Tahoma", 8.25!, System.Drawing.FontStyle.Bold)
-        Me.LabelControl4.Appearance.Options.UseFont = True
-        Me.LabelControl4.Location = New System.Drawing.Point(41, 112)
-        Me.LabelControl4.Name = "LabelControl4"
-        Me.LabelControl4.Size = New System.Drawing.Size(47, 13)
-        Me.LabelControl4.TabIndex = 19
-        Me.LabelControl4.Text = "Nombre:"
-        '
-        'LabelControl3
-        '
-        Me.LabelControl3.Appearance.Font = New System.Drawing.Font("Tahoma", 8.25!, System.Drawing.FontStyle.Bold)
-        Me.LabelControl3.Appearance.Options.UseFont = True
-        Me.LabelControl3.Location = New System.Drawing.Point(18, 86)
-        Me.LabelControl3.Name = "LabelControl3"
-        Me.LabelControl3.Size = New System.Drawing.Size(70, 13)
-        Me.LabelControl3.TabIndex = 18
-        Me.LabelControl3.Text = "# Empleado:"
-        '
-        'LabelControl2
-        '
-        Me.LabelControl2.Appearance.Font = New System.Drawing.Font("Tahoma", 8.25!, System.Drawing.FontStyle.Bold)
-        Me.LabelControl2.Appearance.Options.UseFont = True
-        Me.LabelControl2.Location = New System.Drawing.Point(52, 57)
-        Me.LabelControl2.Name = "LabelControl2"
-        Me.LabelControl2.Size = New System.Drawing.Size(36, 13)
-        Me.LabelControl2.TabIndex = 17
-        Me.LabelControl2.Text = "Fecha:"
-        '
-        'txtNFactura
-        '
-        Me.txtNFactura.EditValue = ""
-        Me.txtNFactura.Location = New System.Drawing.Point(92, 30)
-        Me.txtNFactura.Name = "txtNFactura"
-        Me.txtNFactura.Size = New System.Drawing.Size(258, 20)
-        Me.txtNFactura.TabIndex = 16
-        '
-        'LabelControl1
-        '
-        Me.LabelControl1.Appearance.Font = New System.Drawing.Font("Tahoma", 8.25!, System.Drawing.FontStyle.Bold)
-        Me.LabelControl1.Appearance.Options.UseFont = True
-        Me.LabelControl1.Location = New System.Drawing.Point(30, 34)
-        Me.LabelControl1.Name = "LabelControl1"
-        Me.LabelControl1.Size = New System.Drawing.Size(58, 13)
-        Me.LabelControl1.TabIndex = 15
-        Me.LabelControl1.Text = "# Factura:"
-        '
-        'GridSplitContainer1
-        '
-        Me.GridSplitContainer1.Dock = System.Windows.Forms.DockStyle.Fill
-        Me.GridSplitContainer1.Grid = Me.gdcDeducClinic
-        Me.GridSplitContainer1.Location = New System.Drawing.Point(0, 0)
-        Me.GridSplitContainer1.Name = "GridSplitContainer1"
-        Me.GridSplitContainer1.Panel1.Controls.Add(Me.gdcDeducClinic)
-        Me.GridSplitContainer1.Size = New System.Drawing.Size(608, 423)
-        Me.GridSplitContainer1.TabIndex = 0
-        Me.GridSplitContainer1.ToolTipController = Me.DefaultToolTipController.DefaultController
-        '
-        'gdcDeducClinic
-        '
-        Me.gdcDeducClinic.Dock = System.Windows.Forms.DockStyle.Fill
-        Me.gdcDeducClinic.Location = New System.Drawing.Point(0, 0)
-        Me.gdcDeducClinic.MainView = Me.gdvDeducClinic
-        Me.gdcDeducClinic.Name = "gdcDeducClinic"
-        Me.gdcDeducClinic.Size = New System.Drawing.Size(608, 423)
-        Me.gdcDeducClinic.TabIndex = 0
-        Me.gdcDeducClinic.ViewCollection.AddRange(New DevExpress.XtraGrid.Views.Base.BaseView() {Me.gdvDeducClinic})
-        '
-        'gdvDeducClinic
-        '
-        Me.gdvDeducClinic.GridControl = Me.gdcDeducClinic
-        Me.gdvDeducClinic.Name = "gdvDeducClinic"
+        Me.DefaultToolTipController.DefaultController.KeepWhileHovered = True
         '
         'PopupControlContainer
         '
@@ -358,29 +167,29 @@ Partial Class FrmDeducionesClinica
         Me.bbiImportarExcel.Caption = "&Importar Excel"
         Me.bbiImportarExcel.Id = 2
         Me.bbiImportarExcel.Name = "bbiImportarExcel"
-        ToolTipTitleItem1.Appearance.Font = New System.Drawing.Font("Tahoma", 8.25!, System.Drawing.FontStyle.Bold)
-        ToolTipTitleItem1.Appearance.Options.UseFont = True
-        ToolTipTitleItem1.Text = "Importar Excel"
-        ToolTipItem1.ImageOptions.ImageUri.Uri = "outlook%20inspired/about"
-        ToolTipItem1.Text = "Importa un archivo Excel y obtiene los datos para ser insertados en la base de da" &
+        ToolTipTitleItem7.Appearance.Font = New System.Drawing.Font("Tahoma", 8.25!, System.Drawing.FontStyle.Bold)
+        ToolTipTitleItem7.Appearance.Options.UseFont = True
+        ToolTipTitleItem7.Text = "Importar Excel"
+        ToolTipItem7.ImageOptions.ImageUri.Uri = "outlook%20inspired/about"
+        ToolTipItem7.Text = "Importa un archivo Excel y obtiene los datos para ser insertados en la base de da" &
     "tos."
-        SuperToolTip1.Items.Add(ToolTipTitleItem1)
-        SuperToolTip1.Items.Add(ToolTipItem1)
-        Me.bbiImportarExcel.SuperTip = SuperToolTip1
+        SuperToolTip7.Items.Add(ToolTipTitleItem7)
+        SuperToolTip7.Items.Add(ToolTipItem7)
+        Me.bbiImportarExcel.SuperTip = SuperToolTip7
         '
         'bbiCopiarDatosExcell2
         '
         Me.bbiCopiarDatosExcell2.Caption = "&Copiar Datos de Excel a Base de Datos"
         Me.bbiCopiarDatosExcell2.Id = 3
         Me.bbiCopiarDatosExcell2.Name = "bbiCopiarDatosExcell2"
-        ToolTipTitleItem2.Appearance.Font = New System.Drawing.Font("Tahoma", 8.25!, System.Drawing.FontStyle.Bold)
-        ToolTipTitleItem2.Appearance.Options.UseFont = True
-        ToolTipTitleItem2.Text = "Copiar Datos de Excel a Base de Datos"
-        ToolTipItem2.ImageOptions.ImageUri.Uri = "outlook%20inspired/about"
-        ToolTipItem2.Text = "Muestra una Ventana Popup para pegar los datos del archivo Excel"
-        SuperToolTip2.Items.Add(ToolTipTitleItem2)
-        SuperToolTip2.Items.Add(ToolTipItem2)
-        Me.bbiCopiarDatosExcell2.SuperTip = SuperToolTip2
+        ToolTipTitleItem8.Appearance.Font = New System.Drawing.Font("Tahoma", 8.25!, System.Drawing.FontStyle.Bold)
+        ToolTipTitleItem8.Appearance.Options.UseFont = True
+        ToolTipTitleItem8.Text = "Copiar Datos de Excel a Base de Datos"
+        ToolTipItem8.ImageOptions.ImageUri.Uri = "outlook%20inspired/about"
+        ToolTipItem8.Text = "Muestra una Ventana Popup para pegar los datos del archivo Excel"
+        SuperToolTip8.Items.Add(ToolTipTitleItem8)
+        SuperToolTip8.Items.Add(ToolTipItem8)
+        Me.bbiCopiarDatosExcell2.SuperTip = SuperToolTip8
         '
         'Bar2
         '
@@ -403,16 +212,16 @@ Partial Class FrmDeducionesClinica
         Me.bbiNuevo.ImageOptions.LargeImage = CType(resources.GetObject("bbiNuevo.ImageOptions.LargeImage"), System.Drawing.Image)
         Me.bbiNuevo.Name = "bbiNuevo"
         Me.bbiNuevo.PaintStyle = DevExpress.XtraBars.BarItemPaintStyle.CaptionGlyph
-        ToolTipTitleItem3.AllowHtmlText = DevExpress.Utils.DefaultBoolean.[True]
-        ToolTipTitleItem3.Appearance.Font = New System.Drawing.Font("Tahoma", 8.25!, System.Drawing.FontStyle.Bold)
-        ToolTipTitleItem3.Appearance.Options.UseFont = True
-        ToolTipTitleItem3.Text = "<b></b>Nuevo"
-        ToolTipItem3.AllowHtmlText = DevExpress.Utils.DefaultBoolean.[True]
-        ToolTipItem3.ImageOptions.ImageUri.Uri = "outlook%20inspired/about"
-        ToolTipItem3.Text = "<b></b>Habilita un cuadro para ingresar el contenido de la deduccion de clinica."
-        SuperToolTip3.Items.Add(ToolTipTitleItem3)
-        SuperToolTip3.Items.Add(ToolTipItem3)
-        Me.bbiNuevo.SuperTip = SuperToolTip3
+        ToolTipTitleItem5.AllowHtmlText = DevExpress.Utils.DefaultBoolean.[True]
+        ToolTipTitleItem5.Appearance.Font = New System.Drawing.Font("Tahoma", 8.25!, System.Drawing.FontStyle.Bold)
+        ToolTipTitleItem5.Appearance.Options.UseFont = True
+        ToolTipTitleItem5.Text = "<b></b>Nuevo"
+        ToolTipItem5.AllowHtmlText = DevExpress.Utils.DefaultBoolean.[True]
+        ToolTipItem5.ImageOptions.ImageUri.Uri = "outlook%20inspired/about"
+        ToolTipItem5.Text = "<b></b>Habilita un cuadro para ingresar el contenido de la deduccion de clinica."
+        SuperToolTip5.Items.Add(ToolTipTitleItem5)
+        SuperToolTip5.Items.Add(ToolTipItem5)
+        Me.bbiNuevo.SuperTip = SuperToolTip5
         '
         'bbiCancelar
         '
@@ -423,14 +232,14 @@ Partial Class FrmDeducionesClinica
         Me.bbiCancelar.ImageOptions.LargeImage = CType(resources.GetObject("bbiCancelar.ImageOptions.LargeImage"), System.Drawing.Image)
         Me.bbiCancelar.Name = "bbiCancelar"
         Me.bbiCancelar.PaintStyle = DevExpress.XtraBars.BarItemPaintStyle.CaptionGlyph
-        ToolTipTitleItem4.Appearance.Font = New System.Drawing.Font("Tahoma", 8.25!, System.Drawing.FontStyle.Bold)
-        ToolTipTitleItem4.Appearance.Options.UseFont = True
-        ToolTipTitleItem4.Text = "Cancelar"
-        ToolTipItem4.ImageOptions.ImageUri.Uri = "outlook%20inspired/about"
-        ToolTipItem4.Text = "Cierra el cuadro de insercion de los datos."
-        SuperToolTip4.Items.Add(ToolTipTitleItem4)
-        SuperToolTip4.Items.Add(ToolTipItem4)
-        Me.bbiCancelar.SuperTip = SuperToolTip4
+        ToolTipTitleItem6.Appearance.Font = New System.Drawing.Font("Tahoma", 8.25!, System.Drawing.FontStyle.Bold)
+        ToolTipTitleItem6.Appearance.Options.UseFont = True
+        ToolTipTitleItem6.Text = "Cancelar"
+        ToolTipItem6.ImageOptions.ImageUri.Uri = "outlook%20inspired/about"
+        ToolTipItem6.Text = "Cierra el cuadro de insercion de los datos."
+        SuperToolTip6.Items.Add(ToolTipTitleItem6)
+        SuperToolTip6.Items.Add(ToolTipItem6)
+        Me.bbiCancelar.SuperTip = SuperToolTip6
         '
         'barDockControlTop
         '
@@ -474,22 +283,213 @@ Partial Class FrmDeducionesClinica
         Me.btnSaveExcel.TabIndex = 0
         Me.btnSaveExcel.Text = "&Guardar"
         '
+        'GridSplitContainer1
+        '
+        Me.GridSplitContainer1.Dock = System.Windows.Forms.DockStyle.Fill
+        Me.GridSplitContainer1.Grid = Me.gdcDeducClinic
+        Me.GridSplitContainer1.Location = New System.Drawing.Point(0, 0)
+        Me.GridSplitContainer1.Name = "GridSplitContainer1"
+        Me.GridSplitContainer1.Panel1.Controls.Add(Me.gdcDeducClinic)
+        Me.GridSplitContainer1.Size = New System.Drawing.Size(608, 423)
+        Me.GridSplitContainer1.TabIndex = 0
+        Me.GridSplitContainer1.ToolTipController = Me.DefaultToolTipController.DefaultController
+        '
+        'gdcDeducClinic
+        '
+        Me.gdcDeducClinic.Dock = System.Windows.Forms.DockStyle.Fill
+        Me.gdcDeducClinic.Location = New System.Drawing.Point(0, 0)
+        Me.gdcDeducClinic.MainView = Me.gdvDeducClinic
+        Me.gdcDeducClinic.Name = "gdcDeducClinic"
+        Me.gdcDeducClinic.Size = New System.Drawing.Size(608, 423)
+        Me.gdcDeducClinic.TabIndex = 0
+        Me.gdcDeducClinic.ViewCollection.AddRange(New DevExpress.XtraGrid.Views.Base.BaseView() {Me.gdvDeducClinic})
+        '
+        'gdvDeducClinic
+        '
+        Me.gdvDeducClinic.GridControl = Me.gdcDeducClinic
+        Me.gdvDeducClinic.Name = "gdvDeducClinic"
+        '
         'ImageCollection
         '
         Me.ImageCollection.ImageStream = CType(resources.GetObject("ImageCollection.ImageStream"), DevExpress.Utils.ImageCollectionStreamer)
         Me.ImageCollection.Images.SetKeyName(0, "removesheetrows_32x32.png")
         Me.ImageCollection.Images.SetKeyName(1, "updatetableofcontents_32x32.png")
         '
-        'DxErrorProvider
+        'DxValidationProvider
         '
-        Me.DxErrorProvider.ContainerControl = Me
+        Me.DxValidationProvider.ValidationMode = DevExpress.XtraEditors.DXErrorProvider.ValidationMode.Manual
         '
-        'DefaultToolTipController
+        'GroupControl
         '
+        Me.GroupControl.AutoSize = True
+        Me.GroupControl.Controls.Add(Me.btnSave)
+        Me.GroupControl.Controls.Add(Me.txtMonto)
+        Me.GroupControl.Controls.Add(Me.mmConcepto)
+        Me.GroupControl.Controls.Add(Me.txtProyecto)
+        Me.GroupControl.Controls.Add(Me.txtNombre)
+        Me.GroupControl.Controls.Add(Me.txtNEmpleado)
+        Me.GroupControl.Controls.Add(Me.LabelControl7)
+        Me.GroupControl.Controls.Add(Me.LabelControl6)
+        Me.GroupControl.Controls.Add(Me.dtFecha)
+        Me.GroupControl.Controls.Add(Me.LabelControl5)
+        Me.GroupControl.Controls.Add(Me.LabelControl4)
+        Me.GroupControl.Controls.Add(Me.LabelControl3)
+        Me.GroupControl.Controls.Add(Me.LabelControl2)
+        Me.GroupControl.Controls.Add(Me.txtNFactura)
+        Me.GroupControl.Controls.Add(Me.LabelControl1)
+        Me.GroupControl.Dock = System.Windows.Forms.DockStyle.Fill
+        Me.GroupControl.Location = New System.Drawing.Point(0, 0)
+        Me.GroupControl.Name = "GroupControl"
+        Me.GroupControl.Size = New System.Drawing.Size(364, 423)
+        Me.GroupControl.TabIndex = 0
+        Me.GroupControl.Text = "INGRESO DE DEDUCCION DE CLINICA"
+        Me.GroupControl.ToolTipController = Me.DefaultToolTipController.DefaultController
         '
+        'LabelControl1
         '
+        Me.LabelControl1.Appearance.Font = New System.Drawing.Font("Tahoma", 8.25!, System.Drawing.FontStyle.Bold)
+        Me.LabelControl1.Appearance.Options.UseFont = True
+        Me.LabelControl1.Location = New System.Drawing.Point(30, 34)
+        Me.LabelControl1.Name = "LabelControl1"
+        Me.LabelControl1.Size = New System.Drawing.Size(58, 13)
+        Me.LabelControl1.TabIndex = 8
+        Me.LabelControl1.Text = "# Factura:"
         '
-        Me.DefaultToolTipController.DefaultController.KeepWhileHovered = True
+        'txtNFactura
+        '
+        Me.txtNFactura.EditValue = ""
+        Me.txtNFactura.Location = New System.Drawing.Point(92, 30)
+        Me.txtNFactura.Name = "txtNFactura"
+        Me.txtNFactura.Size = New System.Drawing.Size(258, 20)
+        Me.txtNFactura.TabIndex = 0
+        '
+        'LabelControl2
+        '
+        Me.LabelControl2.Appearance.Font = New System.Drawing.Font("Tahoma", 8.25!, System.Drawing.FontStyle.Bold)
+        Me.LabelControl2.Appearance.Options.UseFont = True
+        Me.LabelControl2.Location = New System.Drawing.Point(52, 57)
+        Me.LabelControl2.Name = "LabelControl2"
+        Me.LabelControl2.Size = New System.Drawing.Size(36, 13)
+        Me.LabelControl2.TabIndex = 9
+        Me.LabelControl2.Text = "Fecha:"
+        '
+        'LabelControl3
+        '
+        Me.LabelControl3.Appearance.Font = New System.Drawing.Font("Tahoma", 8.25!, System.Drawing.FontStyle.Bold)
+        Me.LabelControl3.Appearance.Options.UseFont = True
+        Me.LabelControl3.Location = New System.Drawing.Point(18, 86)
+        Me.LabelControl3.Name = "LabelControl3"
+        Me.LabelControl3.Size = New System.Drawing.Size(70, 13)
+        Me.LabelControl3.TabIndex = 10
+        Me.LabelControl3.Text = "# Empleado:"
+        '
+        'LabelControl4
+        '
+        Me.LabelControl4.Appearance.Font = New System.Drawing.Font("Tahoma", 8.25!, System.Drawing.FontStyle.Bold)
+        Me.LabelControl4.Appearance.Options.UseFont = True
+        Me.LabelControl4.Location = New System.Drawing.Point(41, 112)
+        Me.LabelControl4.Name = "LabelControl4"
+        Me.LabelControl4.Size = New System.Drawing.Size(47, 13)
+        Me.LabelControl4.TabIndex = 11
+        Me.LabelControl4.Text = "Nombre:"
+        '
+        'LabelControl5
+        '
+        Me.LabelControl5.Appearance.Font = New System.Drawing.Font("Tahoma", 8.25!, System.Drawing.FontStyle.Bold)
+        Me.LabelControl5.Appearance.Options.UseFont = True
+        Me.LabelControl5.Location = New System.Drawing.Point(34, 138)
+        Me.LabelControl5.Name = "LabelControl5"
+        Me.LabelControl5.Size = New System.Drawing.Size(54, 13)
+        Me.LabelControl5.TabIndex = 12
+        Me.LabelControl5.Text = "Proyecto:"
+        '
+        'dtFecha
+        '
+        Me.dtFecha.EditValue = New Date(2020, 7, 15, 23, 20, 13, 620)
+        Me.dtFecha.Location = New System.Drawing.Point(92, 56)
+        Me.dtFecha.Name = "dtFecha"
+        Me.dtFecha.Properties.Buttons.AddRange(New DevExpress.XtraEditors.Controls.EditorButton() {New DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)})
+        Me.dtFecha.Properties.CalendarTimeProperties.Buttons.AddRange(New DevExpress.XtraEditors.Controls.EditorButton() {New DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)})
+        Me.dtFecha.Properties.Mask.UseMaskAsDisplayFormat = True
+        Me.dtFecha.Properties.MaxValue = New Date(CType(0, Long))
+        Me.dtFecha.Properties.ShowYearNavigationButtons = DevExpress.Utils.DefaultBoolean.[True]
+        Me.dtFecha.Size = New System.Drawing.Size(258, 20)
+        Me.dtFecha.TabIndex = 1
+        '
+        'LabelControl6
+        '
+        Me.LabelControl6.Appearance.Font = New System.Drawing.Font("Tahoma", 8.25!, System.Drawing.FontStyle.Bold)
+        Me.LabelControl6.Appearance.Options.UseFont = True
+        Me.LabelControl6.Location = New System.Drawing.Point(32, 162)
+        Me.LabelControl6.Name = "LabelControl6"
+        Me.LabelControl6.Size = New System.Drawing.Size(56, 13)
+        Me.LabelControl6.TabIndex = 13
+        Me.LabelControl6.Text = "Concepto:"
+        '
+        'LabelControl7
+        '
+        Me.LabelControl7.Appearance.Font = New System.Drawing.Font("Tahoma", 8.25!, System.Drawing.FontStyle.Bold)
+        Me.LabelControl7.Appearance.Options.UseFont = True
+        Me.LabelControl7.Location = New System.Drawing.Point(15, 266)
+        Me.LabelControl7.Name = "LabelControl7"
+        Me.LabelControl7.Size = New System.Drawing.Size(73, 13)
+        Me.LabelControl7.TabIndex = 14
+        Me.LabelControl7.Text = "Monto en C$:"
+        '
+        'txtNEmpleado
+        '
+        Me.txtNEmpleado.Location = New System.Drawing.Point(92, 82)
+        Me.txtNEmpleado.Name = "txtNEmpleado"
+        Me.txtNEmpleado.Size = New System.Drawing.Size(258, 20)
+        Me.txtNEmpleado.TabIndex = 2
+        '
+        'txtNombre
+        '
+        Me.txtNombre.Location = New System.Drawing.Point(92, 108)
+        Me.txtNombre.Name = "txtNombre"
+        Me.txtNombre.Size = New System.Drawing.Size(258, 20)
+        Me.txtNombre.TabIndex = 3
+        '
+        'txtProyecto
+        '
+        Me.txtProyecto.Location = New System.Drawing.Point(92, 134)
+        Me.txtProyecto.Name = "txtProyecto"
+        Me.txtProyecto.Size = New System.Drawing.Size(258, 20)
+        Me.txtProyecto.TabIndex = 4
+        '
+        'mmConcepto
+        '
+        Me.mmConcepto.EditValue = ""
+        Me.mmConcepto.Location = New System.Drawing.Point(92, 160)
+        Me.mmConcepto.Name = "mmConcepto"
+        Me.mmConcepto.Properties.LinesCount = 4
+        Me.mmConcepto.Size = New System.Drawing.Size(258, 96)
+        Me.mmConcepto.TabIndex = 5
+        '
+        'txtMonto
+        '
+        Me.txtMonto.Location = New System.Drawing.Point(92, 262)
+        Me.txtMonto.Name = "txtMonto"
+        Me.txtMonto.Properties.DisplayFormat.FormatString = "c"
+        Me.txtMonto.Properties.DisplayFormat.FormatType = DevExpress.Utils.FormatType.Numeric
+        Me.txtMonto.Properties.EditFormat.FormatString = "c"
+        Me.txtMonto.Properties.EditFormat.FormatType = DevExpress.Utils.FormatType.Numeric
+        Me.txtMonto.Properties.Mask.EditMask = "c"
+        Me.txtMonto.Properties.Mask.MaskType = DevExpress.XtraEditors.Mask.MaskType.Numeric
+        Me.txtMonto.Properties.Mask.UseMaskAsDisplayFormat = True
+        Me.txtMonto.Size = New System.Drawing.Size(258, 20)
+        Me.txtMonto.TabIndex = 6
+        '
+        'btnSave
+        '
+        Me.btnSave.Appearance.BackColor = DevExpress.LookAndFeel.DXSkinColors.FillColors.Success
+        Me.btnSave.Appearance.Options.UseBackColor = True
+        Me.btnSave.ImageOptions.SvgImageColorizationMode = DevExpress.Utils.SvgImageColorizationMode.CommonPalette
+        Me.btnSave.Location = New System.Drawing.Point(93, 288)
+        Me.btnSave.Name = "btnSave"
+        Me.btnSave.Size = New System.Drawing.Size(258, 28)
+        Me.btnSave.TabIndex = 7
+        Me.btnSave.Text = "&GUARDAR"
         '
         'FrmDeducionesClinica
         '
@@ -512,26 +512,26 @@ Partial Class FrmDeducionesClinica
         Me.Text = "..:: Deduciones De Clinica"
         CType(Me.SplitContainerControl, System.ComponentModel.ISupportInitialize).EndInit()
         Me.SplitContainerControl.ResumeLayout(False)
-        CType(Me.GroupControl, System.ComponentModel.ISupportInitialize).EndInit()
-        Me.GroupControl.ResumeLayout(False)
-        Me.GroupControl.PerformLayout()
-        CType(Me.txtMonto.Properties, System.ComponentModel.ISupportInitialize).EndInit()
-        CType(Me.mmConcepto.Properties, System.ComponentModel.ISupportInitialize).EndInit()
-        CType(Me.txtProyecto.Properties, System.ComponentModel.ISupportInitialize).EndInit()
-        CType(Me.txtNombre.Properties, System.ComponentModel.ISupportInitialize).EndInit()
-        CType(Me.txtNEmpleado.Properties, System.ComponentModel.ISupportInitialize).EndInit()
-        CType(Me.dtFecha.Properties.CalendarTimeProperties, System.ComponentModel.ISupportInitialize).EndInit()
-        CType(Me.dtFecha.Properties, System.ComponentModel.ISupportInitialize).EndInit()
-        CType(Me.txtNFactura.Properties, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.PopupControlContainer, System.ComponentModel.ISupportInitialize).EndInit()
+        Me.PopupControlContainer.ResumeLayout(False)
+        CType(Me.BarManager, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.GridSplitContainer1, System.ComponentModel.ISupportInitialize).EndInit()
         Me.GridSplitContainer1.ResumeLayout(False)
         CType(Me.gdcDeducClinic, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.gdvDeducClinic, System.ComponentModel.ISupportInitialize).EndInit()
-        CType(Me.PopupControlContainer, System.ComponentModel.ISupportInitialize).EndInit()
-        Me.PopupControlContainer.ResumeLayout(False)
-        CType(Me.BarManager, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.ImageCollection, System.ComponentModel.ISupportInitialize).EndInit()
-        CType(Me.DxErrorProvider, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.DxValidationProvider, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.GroupControl, System.ComponentModel.ISupportInitialize).EndInit()
+        Me.GroupControl.ResumeLayout(False)
+        Me.GroupControl.PerformLayout()
+        CType(Me.txtNFactura.Properties, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.dtFecha.Properties.CalendarTimeProperties, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.dtFecha.Properties, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.txtNEmpleado.Properties, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.txtNombre.Properties, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.txtProyecto.Properties, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.mmConcepto.Properties, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.txtMonto.Properties, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)
         Me.PerformLayout()
 
@@ -540,23 +540,7 @@ Partial Class FrmDeducionesClinica
     Friend WithEvents SplitContainerControl As DevExpress.XtraEditors.SplitContainerControl
     Friend WithEvents gdcDeducClinic As DevExpress.XtraGrid.GridControl
     Friend WithEvents gdvDeducClinic As DevExpress.XtraGrid.Views.Grid.GridView
-    Friend WithEvents GroupControl As DevExpress.XtraEditors.GroupControl
     Friend WithEvents GridSplitContainer1 As DevExpress.XtraGrid.GridSplitContainer
-    Friend WithEvents btnSave As DevExpress.XtraEditors.SimpleButton
-    Friend WithEvents txtMonto As DevExpress.XtraEditors.TextEdit
-    Friend WithEvents mmConcepto As DevExpress.XtraEditors.MemoEdit
-    Friend WithEvents txtProyecto As DevExpress.XtraEditors.TextEdit
-    Friend WithEvents txtNombre As DevExpress.XtraEditors.TextEdit
-    Friend WithEvents txtNEmpleado As DevExpress.XtraEditors.TextEdit
-    Friend WithEvents LabelControl7 As DevExpress.XtraEditors.LabelControl
-    Friend WithEvents LabelControl6 As DevExpress.XtraEditors.LabelControl
-    Friend WithEvents dtFecha As DevExpress.XtraEditors.DateEdit
-    Friend WithEvents LabelControl5 As DevExpress.XtraEditors.LabelControl
-    Friend WithEvents LabelControl4 As DevExpress.XtraEditors.LabelControl
-    Friend WithEvents LabelControl3 As DevExpress.XtraEditors.LabelControl
-    Friend WithEvents LabelControl2 As DevExpress.XtraEditors.LabelControl
-    Friend WithEvents txtNFactura As DevExpress.XtraEditors.TextEdit
-    Friend WithEvents LabelControl1 As DevExpress.XtraEditors.LabelControl
     Friend WithEvents BarManager As DevExpress.XtraBars.BarManager
     Friend WithEvents Bar1 As DevExpress.XtraBars.Bar
     Friend WithEvents Bar2 As DevExpress.XtraBars.Bar
@@ -572,6 +556,22 @@ Partial Class FrmDeducionesClinica
     Friend WithEvents PopupControlContainer As DevExpress.XtraBars.PopupControlContainer
     Friend WithEvents SpreadsheetControl As DevExpress.XtraSpreadsheet.SpreadsheetControl
     Friend WithEvents ImageCollection As DevExpress.Utils.ImageCollection
-    Friend WithEvents DxErrorProvider As DevExpress.XtraEditors.DXErrorProvider.DXErrorProvider
     Friend WithEvents DefaultToolTipController As DevExpress.Utils.DefaultToolTipController
+    Friend WithEvents DxValidationProvider As DevExpress.XtraEditors.DXErrorProvider.DXValidationProvider
+    Friend WithEvents GroupControl As DevExpress.XtraEditors.GroupControl
+    Friend WithEvents btnSave As DevExpress.XtraEditors.SimpleButton
+    Friend WithEvents txtMonto As DevExpress.XtraEditors.TextEdit
+    Friend WithEvents mmConcepto As DevExpress.XtraEditors.MemoEdit
+    Friend WithEvents txtProyecto As DevExpress.XtraEditors.TextEdit
+    Friend WithEvents txtNombre As DevExpress.XtraEditors.TextEdit
+    Friend WithEvents txtNEmpleado As DevExpress.XtraEditors.TextEdit
+    Friend WithEvents LabelControl7 As DevExpress.XtraEditors.LabelControl
+    Friend WithEvents LabelControl6 As DevExpress.XtraEditors.LabelControl
+    Friend WithEvents dtFecha As DevExpress.XtraEditors.DateEdit
+    Friend WithEvents LabelControl5 As DevExpress.XtraEditors.LabelControl
+    Friend WithEvents LabelControl4 As DevExpress.XtraEditors.LabelControl
+    Friend WithEvents LabelControl3 As DevExpress.XtraEditors.LabelControl
+    Friend WithEvents LabelControl2 As DevExpress.XtraEditors.LabelControl
+    Friend WithEvents txtNFactura As DevExpress.XtraEditors.TextEdit
+    Friend WithEvents LabelControl1 As DevExpress.XtraEditors.LabelControl
 End Class

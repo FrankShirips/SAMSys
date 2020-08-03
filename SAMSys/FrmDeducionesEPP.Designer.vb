@@ -67,7 +67,7 @@ Partial Class FrmDeducionesEPP
         Me.gdcDeducEPP = New DevExpress.XtraGrid.GridControl()
         Me.gdvDeducEPP = New DevExpress.XtraGrid.Views.Grid.GridView()
         Me.ImageCollection = New DevExpress.Utils.ImageCollection(Me.components)
-        Me.DxErrorProvider = New DevExpress.XtraEditors.DXErrorProvider.DXErrorProvider(Me.components)
+        Me.DxValidationProvider = New DevExpress.XtraEditors.DXErrorProvider.DXValidationProvider(Me.components)
         CType(Me.SplitContainerControl, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SplitContainerControl.SuspendLayout()
         CType(Me.GroupControl, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -87,7 +87,7 @@ Partial Class FrmDeducionesEPP
         CType(Me.gdcDeducEPP, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.gdvDeducEPP, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.ImageCollection, System.ComponentModel.ISupportInitialize).BeginInit()
-        CType(Me.DxErrorProvider, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.DxValidationProvider, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
         'SplitContainerControl
@@ -138,7 +138,7 @@ Partial Class FrmDeducionesEPP
         Me.btnSave.Location = New System.Drawing.Point(92, 262)
         Me.btnSave.Name = "btnSave"
         Me.btnSave.Size = New System.Drawing.Size(258, 28)
-        Me.btnSave.TabIndex = 29
+        Me.btnSave.TabIndex = 6
         Me.btnSave.Text = "&GUARDAR"
         '
         'txtMonto
@@ -153,7 +153,7 @@ Partial Class FrmDeducionesEPP
         Me.txtMonto.Properties.Mask.MaskType = DevExpress.XtraEditors.Mask.MaskType.Numeric
         Me.txtMonto.Properties.Mask.UseMaskAsDisplayFormat = True
         Me.txtMonto.Size = New System.Drawing.Size(258, 20)
-        Me.txtMonto.TabIndex = 28
+        Me.txtMonto.TabIndex = 5
         '
         'mmConcepto
         '
@@ -162,28 +162,28 @@ Partial Class FrmDeducionesEPP
         Me.mmConcepto.Name = "mmConcepto"
         Me.mmConcepto.Properties.LinesCount = 4
         Me.mmConcepto.Size = New System.Drawing.Size(258, 96)
-        Me.mmConcepto.TabIndex = 27
+        Me.mmConcepto.TabIndex = 4
         '
         'txtProyecto
         '
         Me.txtProyecto.Location = New System.Drawing.Point(91, 108)
         Me.txtProyecto.Name = "txtProyecto"
         Me.txtProyecto.Size = New System.Drawing.Size(258, 20)
-        Me.txtProyecto.TabIndex = 26
+        Me.txtProyecto.TabIndex = 3
         '
         'txtNombre
         '
         Me.txtNombre.Location = New System.Drawing.Point(91, 82)
         Me.txtNombre.Name = "txtNombre"
         Me.txtNombre.Size = New System.Drawing.Size(258, 20)
-        Me.txtNombre.TabIndex = 25
+        Me.txtNombre.TabIndex = 2
         '
         'txtNEmpleado
         '
         Me.txtNEmpleado.Location = New System.Drawing.Point(91, 56)
         Me.txtNEmpleado.Name = "txtNEmpleado"
         Me.txtNEmpleado.Size = New System.Drawing.Size(258, 20)
-        Me.txtNEmpleado.TabIndex = 24
+        Me.txtNEmpleado.TabIndex = 1
         '
         'LabelControl7
         '
@@ -192,7 +192,7 @@ Partial Class FrmDeducionesEPP
         Me.LabelControl7.Location = New System.Drawing.Point(14, 240)
         Me.LabelControl7.Name = "LabelControl7"
         Me.LabelControl7.Size = New System.Drawing.Size(73, 13)
-        Me.LabelControl7.TabIndex = 23
+        Me.LabelControl7.TabIndex = 12
         Me.LabelControl7.Text = "Monto en C$:"
         '
         'LabelControl6
@@ -202,12 +202,12 @@ Partial Class FrmDeducionesEPP
         Me.LabelControl6.Location = New System.Drawing.Point(31, 136)
         Me.LabelControl6.Name = "LabelControl6"
         Me.LabelControl6.Size = New System.Drawing.Size(56, 13)
-        Me.LabelControl6.TabIndex = 22
+        Me.LabelControl6.TabIndex = 11
         Me.LabelControl6.Text = "Concepto:"
         '
         'dtFecha
         '
-        Me.dtFecha.EditValue = New Date(2020, 7, 15, 23, 20, 13, 620)
+        Me.dtFecha.EditValue = Nothing
         Me.dtFecha.Location = New System.Drawing.Point(91, 30)
         Me.dtFecha.Name = "dtFecha"
         Me.dtFecha.Properties.Buttons.AddRange(New DevExpress.XtraEditors.Controls.EditorButton() {New DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)})
@@ -216,7 +216,7 @@ Partial Class FrmDeducionesEPP
         Me.dtFecha.Properties.MaxValue = New Date(CType(0, Long))
         Me.dtFecha.Properties.ShowYearNavigationButtons = DevExpress.Utils.DefaultBoolean.[True]
         Me.dtFecha.Size = New System.Drawing.Size(258, 20)
-        Me.dtFecha.TabIndex = 21
+        Me.dtFecha.TabIndex = 0
         '
         'LabelControl5
         '
@@ -225,7 +225,7 @@ Partial Class FrmDeducionesEPP
         Me.LabelControl5.Location = New System.Drawing.Point(33, 112)
         Me.LabelControl5.Name = "LabelControl5"
         Me.LabelControl5.Size = New System.Drawing.Size(54, 13)
-        Me.LabelControl5.TabIndex = 20
+        Me.LabelControl5.TabIndex = 10
         Me.LabelControl5.Text = "Proyecto:"
         '
         'LabelControl4
@@ -235,7 +235,7 @@ Partial Class FrmDeducionesEPP
         Me.LabelControl4.Location = New System.Drawing.Point(40, 86)
         Me.LabelControl4.Name = "LabelControl4"
         Me.LabelControl4.Size = New System.Drawing.Size(47, 13)
-        Me.LabelControl4.TabIndex = 19
+        Me.LabelControl4.TabIndex = 9
         Me.LabelControl4.Text = "Nombre:"
         '
         'LabelControl3
@@ -245,7 +245,7 @@ Partial Class FrmDeducionesEPP
         Me.LabelControl3.Location = New System.Drawing.Point(17, 60)
         Me.LabelControl3.Name = "LabelControl3"
         Me.LabelControl3.Size = New System.Drawing.Size(70, 13)
-        Me.LabelControl3.TabIndex = 18
+        Me.LabelControl3.TabIndex = 8
         Me.LabelControl3.Text = "# Empleado:"
         '
         'LabelControl2
@@ -255,7 +255,7 @@ Partial Class FrmDeducionesEPP
         Me.LabelControl2.Location = New System.Drawing.Point(51, 31)
         Me.LabelControl2.Name = "LabelControl2"
         Me.LabelControl2.Size = New System.Drawing.Size(36, 13)
-        Me.LabelControl2.TabIndex = 17
+        Me.LabelControl2.TabIndex = 7
         Me.LabelControl2.Text = "Fecha:"
         '
         'DefaultToolTipController
@@ -464,9 +464,9 @@ Partial Class FrmDeducionesEPP
         Me.ImageCollection.Images.SetKeyName(0, "removesheetrows_32x32.png")
         Me.ImageCollection.Images.SetKeyName(1, "updatetableofcontents_32x32.png")
         '
-        'DxErrorProvider
+        'DxValidationProvider
         '
-        Me.DxErrorProvider.ContainerControl = Me
+        Me.DxValidationProvider.ValidationMode = DevExpress.XtraEditors.DXErrorProvider.ValidationMode.Manual
         '
         'FrmDeducionesEPP
         '
@@ -507,7 +507,7 @@ Partial Class FrmDeducionesEPP
         CType(Me.gdcDeducEPP, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.gdvDeducEPP, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.ImageCollection, System.ComponentModel.ISupportInitialize).EndInit()
-        CType(Me.DxErrorProvider, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.DxValidationProvider, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)
         Me.PerformLayout()
 
@@ -546,6 +546,6 @@ Partial Class FrmDeducionesEPP
     Friend WithEvents PopupControlContainer As DevExpress.XtraBars.PopupControlContainer
     Friend WithEvents SpreadsheetControl As DevExpress.XtraSpreadsheet.SpreadsheetControl
     Friend WithEvents ImageCollection As DevExpress.Utils.ImageCollection
-    Friend WithEvents DxErrorProvider As DevExpress.XtraEditors.DXErrorProvider.DXErrorProvider
     Friend WithEvents DefaultToolTipController As DevExpress.Utils.DefaultToolTipController
+    Friend WithEvents DxValidationProvider As DevExpress.XtraEditors.DXErrorProvider.DXValidationProvider
 End Class

@@ -20,7 +20,34 @@ Public Class FrmVacPerm
     ''' Refresca el GridControl para Mostrar los Datos
     ''' </summary>
     Sub RefrescarGridView()
-        Me.gdcVacPerm.DataSource = Result.ListarVacPerm
+        Me.gdcVacPerm.DataSource = Result.ListarVacPerm ' Se agrega el datatable con los registros consultados primeramente.
+
+        Dim ListVacPerm As DataTable = Result.ListarVacPerm ' Se crea otra variable de tipo datatable que almacene la lista de registros.
+
+        Dim ListarVacPermClone As DataTable = ListVacPerm.Clone ' Se crea la variable que contendra los elementos clonados.
+        ListarVacPermClone.Columns("ConceptoOTipo").DataType = System.Type.GetType("System.String") ' Se cambia el tipo de dato de la columna ConceptoOTipo
+        ListarVacPermClone.Columns("TipoDuracion").DataType = System.Type.GetType("System.String")
+
+        For Each row As DataRow In ListVacPerm.Rows ' Por cada fila como DataRow en Lista de filas
+            ListarVacPermClone.ImportRow(row) ' Importa los registros a la variable clonacion.
+        Next
+
+        For index As Integer = 0 To gdvVacPerm.DataRowCount - 1 ' Para index igual a zero a el total de filas de datos menos uno.
+            Dim conceptoOTipo As Integer = CType(gdvVacPerm.GetRowCellValue(index, "ConceptoOTipo"), Integer) ' Se establece el numero de concepto.
+            ConceptoTipo.Id = conceptoOTipo ' Se asigna el valor al campo Id de ConceptoTipo.
+
+            Dim tipo_duracion As Integer = CType(gdvVacPerm.GetRowCellValue(index, "TipoDuracion"), Integer) ' Se establece el numero de TipoDuracion
+            TipoDuracion.Id = tipo_duracion ' Se asigna el valor al campo Id de TipoDuracion.
+
+            Dim DescC As String = Result.ObtenerDescripcionConceptoTipo(ConceptoTipo) ' Descripcion del campo Concepto.
+            Dim DescT As String = Result.ObtenerDescripcionTipoDuracion(TipoDuracion) ' Descripcion del campo TipoDuracion.
+
+            ListarVacPermClone.Rows(index)("ConceptoOTipo") = DescC ' Se reasigna el valor a la fila ConceptoOTipo.
+            ListarVacPermClone.Rows(index)("TipoDuracion") = DescT ' Se reasigna el valor a la fila TipoDuracion.
+        Next
+
+        gdcVacPerm.DataSource = Nothing ' Se asigna el valor de Nothing en el DataSource del gridview.
+        gdcVacPerm.DataSource = ListarVacPermClone ' Se reasigna el valor en el DataSource del gridview.
     End Sub
 
     ''' <summary>
@@ -30,9 +57,9 @@ Public Class FrmVacPerm
         dtInicial.EditValue = Nothing
         dtFinal.EditValue = Nothing
         txtEmpleado.Text = Nothing
-        lueConcepto.EditValue = Nothing
-        lueTipoDuracion.Text = Nothing
-        txtDuracion.EditValue = Nothing
+        lueConcepto.EditValue = 1
+        lueTipoDuracion.EditValue = 1
+        txtDuracion.Text = Nothing
     End Sub
 
     ''' <summary>
@@ -50,6 +77,9 @@ Public Class FrmVacPerm
         btnSave.Enabled = Valor
     End Sub
 
+    ''' <summary>
+    ''' Asigna valor a los LookUpEdit.
+    ''' </summary>
     Sub FillLookups()
         lueConcepto.Properties.DataSource = Result.ListarConceptos
         lueConcepto.Properties.DisplayMember = "Descripcion"
@@ -72,6 +102,11 @@ Public Class FrmVacPerm
         lueTipoDuracion.EditValue = duracion
     End Sub
 
+    ''' <summary>
+    ''' Evento de carga del formulario.
+    ''' </summary>
+    ''' <param name="sender"></param>
+    ''' <param name="e"></param>
     Private Sub FrmVacPerm_Load(sender As Object, e As EventArgs) Handles MyBase.Load
         EmptyGrid(gdcVacPerm, gdvVacPerm)
         FillLookups()
@@ -81,10 +116,6 @@ Public Class FrmVacPerm
         gdvVacPerm.OptionsView.ShowButtonMode = DevExpress.XtraGrid.Views.Base.ShowButtonModeEnum.ShowAlways
         gdvVacPerm.Appearance.HeaderPanel.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center
         gdvVacPerm.OptionsView.ShowGroupPanel = False
-
-        gdvVacPerm.OptionsBehavior.AllowAddRows = DevExpress.Utils.DefaultBoolean.False
-
-        gdvVacPerm.OptionsBehavior.EditingMode = DevExpress.XtraGrid.Views.Grid.GridEditingMode.EditForm
 
         gdvVacPerm.OptionsView.EnableAppearanceEvenRow = True
 
@@ -96,7 +127,7 @@ Public Class FrmVacPerm
         AddColumn("Fecha Inicial", "fechaIni", gdvVacPerm).Width = 100
         AddColumn("Fecha Final", "fechaFin", gdvVacPerm).Width = 100
 
-        Dim concepto = AddColumn("Concepto", "Concepto", gdvVacPerm)
+        Dim concepto = AddColumn("Concepto", "ConceptoOTipo", gdvVacPerm)
         concepto.Width = 100
 
         AddColumn("Duración", "Duracion", gdvVacPerm).Width = 100
@@ -168,7 +199,7 @@ Public Class FrmVacPerm
             Dim rowHandle As Integer = e.HitInfo.RowHandle
             Dim cellValue = view.GetRowCellValue(rowHandle, "Id")
 
-            ConceptoTipo.Descripcion = CType(view.GetRowCellValue(rowHandle, "Concepto"), String)
+            ConceptoTipo.Descripcion = CType(view.GetRowCellValue(rowHandle, "ConceptoOTipo"), String)
             Dim IdConcepto As Integer = Convert.ToInt32(Result.ObtenerIdConceptoTipo(ConceptoTipo).Rows(0)("Id"))
             ConceptoTipo.Id = IdConcepto
 
@@ -232,8 +263,6 @@ Public Class FrmVacPerm
     ''' <param name="sender"></param>
     ''' <param name="e"></param>
     Private Sub OnUpdateRowClick(ByVal sender As Object, ByVal e As EventArgs)
-        'Dim row As DataTable = Result.ListarDeduccionesClinicaPorId(Campos)
-
         txtEmpleado.Text = Campos.Empleado
         dtInicial.EditValue = Convert.ToDateTime(Campos.fechaIni)
         dtFinal.EditValue = Convert.ToDateTime(Campos.fechaFin)

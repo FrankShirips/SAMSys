@@ -30,6 +30,7 @@ Partial Class FrmVacPerm
         Me.BarManager = New DevExpress.XtraBars.BarManager(Me.components)
         Me.Bar2 = New DevExpress.XtraBars.Bar()
         Me.bbiNuevo = New DevExpress.XtraBars.BarButtonItem()
+        Me.bbiCancelar = New DevExpress.XtraBars.BarButtonItem()
         Me.Bar3 = New DevExpress.XtraBars.Bar()
         Me.barDockControlTop = New DevExpress.XtraBars.BarDockControl()
         Me.barDockControlBottom = New DevExpress.XtraBars.BarDockControl()
@@ -52,7 +53,6 @@ Partial Class FrmVacPerm
         Me.dtInicial = New DevExpress.XtraEditors.DateEdit()
         Me.gdcVacPerm = New DevExpress.XtraGrid.GridControl()
         Me.gdvVacPerm = New DevExpress.XtraGrid.Views.Grid.GridView()
-        Me.bbiCancelar = New DevExpress.XtraBars.BarButtonItem()
         Me.ImageCollection = New DevExpress.Utils.ImageCollection(Me.components)
         CType(Me.BarManager, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.SplitContainerControl, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -113,6 +113,20 @@ Partial Class FrmVacPerm
         SuperToolTip1.Items.Add(ToolTipTitleItem1)
         SuperToolTip1.Items.Add(ToolTipItem1)
         Me.bbiNuevo.SuperTip = SuperToolTip1
+        '
+        'bbiCancelar
+        '
+        Me.bbiCancelar.Caption = "&Cancelar"
+        Me.bbiCancelar.Enabled = False
+        Me.bbiCancelar.Id = 1
+        Me.bbiCancelar.ImageOptions.ImageUri.Uri = "Cancel"
+        Me.bbiCancelar.Name = "bbiCancelar"
+        ToolTipTitleItem2.Text = "Cancelar"
+        ToolTipItem2.ImageOptions.Image = CType(resources.GetObject("resource.Image1"), System.Drawing.Image)
+        ToolTipItem2.Text = "Cancela la agregacion o edicion de vacaciones o permisos"
+        SuperToolTip2.Items.Add(ToolTipTitleItem2)
+        SuperToolTip2.Items.Add(ToolTipItem2)
+        Me.bbiCancelar.SuperTip = SuperToolTip2
         '
         'Bar3
         '
@@ -337,19 +351,6 @@ Partial Class FrmVacPerm
         '
         Me.gdvVacPerm.GridControl = Me.gdcVacPerm
         Me.gdvVacPerm.Name = "gdvVacPerm"
-        '
-        'bbiCancelar
-        '
-        Me.bbiCancelar.Caption = "&Cancelar"
-        Me.bbiCancelar.Id = 1
-        Me.bbiCancelar.ImageOptions.ImageUri.Uri = "Cancel"
-        Me.bbiCancelar.Name = "bbiCancelar"
-        ToolTipTitleItem2.Text = "Cancelar"
-        ToolTipItem2.ImageOptions.Image = CType(resources.GetObject("resource.Image1"), System.Drawing.Image)
-        ToolTipItem2.Text = "Cancela la agregacion o edicion de vacaciones o permisos"
-        SuperToolTip2.Items.Add(ToolTipTitleItem2)
-        SuperToolTip2.Items.Add(ToolTipItem2)
-        Me.bbiCancelar.SuperTip = SuperToolTip2
         '
         'ImageCollection
         '

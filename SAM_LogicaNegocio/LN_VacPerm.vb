@@ -62,12 +62,12 @@ Public Class LN_VacPerm
         Return obtener.ObtenerConceptosOTiposDuracionByDescripcion(tipoDuracion, Nothing, "T")
     End Function
 
-    Function ObtenerDescripcionConceptoTipo(ByVal conceptoTipo As EN_ConceptoDuracion) As DataTable
+    Function ObtenerDescripcionConceptoTipo(ByVal conceptoTipo As EN_ConceptoDuracion) As String
         Dim obtener As New AD_VacPerm
         Return obtener.ObtenerConceptosOTiposDuracionByID(Nothing, conceptoTipo, "C")
     End Function
 
-    Function ObtenerDescripcionTipoDuracion(ByVal tipoDuracion As EN_TipoDuracion) As DataTable
+    Function ObtenerDescripcionTipoDuracion(ByVal tipoDuracion As EN_TipoDuracion) As String
         Dim obtener As New AD_VacPerm
         Return obtener.ObtenerConceptosOTiposDuracionByID(tipoDuracion, Nothing, "T")
     End Function

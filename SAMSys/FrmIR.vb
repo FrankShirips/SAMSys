@@ -8,6 +8,7 @@ Imports SAM_LogicaNegocio
 Imports System.Linq
 Imports System.Collections.Generic
 Imports DevExpress.Office.Utils
+Imports DevExpress.XtraEditors.DXErrorProvider
 
 Public Class FrmIR
     Dim Result As New LN_IR
@@ -72,18 +73,35 @@ Public Class FrmIR
 
         RefrescarGridView()
         SetEmbeddedNavigator(gdcIR)
-
     End Sub
 
     Private Sub gdvIR_EditFormPrepared(sender As Object, e As EditFormPreparedEventArgs) Handles gdvIR.EditFormPrepared
         anio = TryCast(e.BindableControls("nCodAño"), TextEdit)
         fechaInicia = TryCast(e.BindableControls("fFechaInicia"), DateEdit)
         fechaFinal = TryCast(e.BindableControls("fFechaFinal"), DateEdit)
+
         minimo = TryCast(e.BindableControls("nMinimo"), TextEdit)
+        SetMaskDisplayFormat(minimo, "c2")
+
         maximo = TryCast(e.BindableControls("nMaximo"), TextEdit)
+        SetMaskDisplayFormat(maximo, "c2")
+
         porcAplica = TryCast(e.BindableControls("nPorcAplica"), TextEdit)
+
         impuestoBase = TryCast(e.BindableControls("nImpuestoBase"), TextEdit)
         sobreExceso = TryCast(e.BindableControls("nSobreExceso"), TextEdit)
+    End Sub
+
+    ''' <summary>
+    ''' 
+    ''' </summary>
+    ''' <param name="control"></param>
+    ''' <param name="editMask"></param>
+    Sub SetMaskDisplayFormat(control As TextEdit, editMask As String)
+        control.EditValue = New Decimal(New Integer() {0, 0, 0, 131072})
+        control.Properties.Mask.MaskType = Mask.MaskType.Numeric
+        control.Properties.Mask.EditMask = editMask
+        control.Properties.Mask.UseMaskAsDisplayFormat = True
     End Sub
 
     Private Sub gdvIR_EditFormHidden(sender As Object, e As EditFormHiddenEventArgs) Handles gdvIR.EditFormHidden
@@ -92,34 +110,46 @@ Public Class FrmIR
 
             Dim cellValue = View.GetRowCellValue(e.RowHandle, "Id")
 
-            Campos.Id = CType(cellValue, Integer)
-            Campos.codAnio = CType(anio.Text, Integer)
-            Campos.fechaInica = DirectCast(fechaInicia.EditValue, DateTime)
-            Campos.fechaFinal = DirectCast(fechaFinal.EditValue, DateTime)
-            Campos.minimo = minimo.Text
-            Campos.maximo = maximo.Text
-            Campos.porcAplica = porcAplica.Text
-            Campos.impuestoBase = impuestoBase.Text
-            Campos.sobreExceso = sobreExceso.Text
+            Try
+                Campos.Id = CType(cellValue, Integer)
+                Campos.codAnio = If(String.IsNullOrEmpty(anio.Text), Nothing, CType(anio.Text, Integer))
+                Campos.fechaInica = DirectCast(fechaInicia.EditValue, DateTime)
+                Campos.fechaFinal = DirectCast(fechaFinal.EditValue, DateTime)
+                Campos.minimo = If(String.IsNullOrEmpty(minimo.Text), Nothing, CType(minimo.Text, Decimal))
+                Campos.maximo = If(String.IsNullOrEmpty(maximo.Text), Nothing, CType(maximo.Text, Decimal))
+                Campos.porcAplica = If(String.IsNullOrEmpty(porcAplica.Text), Nothing, CType(porcAplica.Text, Decimal))
+                Campos.impuestoBase = If(String.IsNullOrEmpty(impuestoBase.Text), Nothing, CType(impuestoBase.Text, Decimal))
+                Campos.sobreExceso = If(String.IsNullOrEmpty(sobreExceso.Text), Nothing, CType(sobreExceso.Text, Decimal))
 
-            Dim i As Boolean
+                Dim i As Boolean
 
-            If Acciones.Equals("A") Then
-                i = Result.ActualizarIR(Campos)
-
-                If i Then
-                    XtraMessageBox.Show("Los cambios son sastifactoriamente guardados.", "Actualizar Datos IR")
-                End If
-            Else
-                If Acciones.Equals("I") Then
-                    i = Result.InsertarIR(Campos)
+                If Acciones.Equals("A") Then
+                    i = Result.ActualizarIR(Campos)
 
                     If i Then
-                        XtraMessageBox.Show("Los cambios son sastifactoriamente guardados.", "Guardar Datos IR")
-                        Acciones = "A"
+                        XtraMessageBox.Show("Los cambios son sastifactoriamente guardados.", "Actualizar Datos IR")
+                        RefrescarGridView()
+                    End If
+                Else
+                    If Acciones.Equals("I") Then
+                        i = Result.InsertarIR(Campos)
+
+                        If i Then
+                            XtraMessageBox.Show("Los cambios son sastifactoriamente guardados.", "Guardar Datos IR")
+                            Acciones = "A"
+                            RefrescarGridView()
+                        Else
+                            XtraMessageBox.Show("Registro ya existe en la base de datos!", "Guardar Datos IR")
+
+                            Acciones = "A"
+                            RefrescarGridView()
+                        End If
                     End If
                 End If
-            End If
+            Catch ex As InvalidCastException
+                Console.WriteLine($"Error ===> {ex.Message}")
+                XtraMessageBox.Show("ERROR GENERICO, VERIFIQUE POR FAVOR LA INFORMACION INGRESADA.", "Tabla IR")
+            End Try
         End If
 
         If e.Result = EditFormResult.Cancel Then
@@ -201,7 +231,14 @@ Public Class FrmIR
         If e.MenuType = GridMenuType.Row Then
             Dim rowHandle As Integer = e.HitInfo.RowHandle
             Dim cellValue = view.GetRowCellValue(rowHandle, "Id")
-            Campos.Id = CType(cellValue, Integer)
+
+            If IsDBNull(cellValue) Then
+                Campos.Id = -1
+            Else
+                Campos.Id = CType(cellValue, Integer)
+            End If
+
+            'Campos.Id = If(IsDBNull(cellValue), Nothing, CType(cellValue, Integer))
 
             e.Menu.Items.Clear()
             e.Menu.Items.Add(CreateItemBorrar(view, rowHandle))
@@ -231,6 +268,10 @@ Public Class FrmIR
 
             If d Then
                 ri.View.DeleteRow(ri.RowHandle)
+                RefrescarGridView()
+            Else
+                ri.View.DeleteRow(ri.RowHandle)
+                RefrescarGridView()
             End If
         End If
     End Sub
@@ -254,13 +295,71 @@ Public Class FrmIR
             Dim view As GridView = CType(sender, GridView)
             Dim cellValue = view.GetRowCellValue(view.FocusedRowHandle, "Id")
 
-            Campos.Id = CType(cellValue, Integer)
+            If IsDBNull(cellValue) Then
+                Campos.Id = -1
+            Else
+                Campos.Id = CType(cellValue, Integer)
+            End If
 
-            Dim d As Boolean = Result.BorrarIR(Campos)
+            'Campos.Id = CType(cellValue, Integer)
 
-            If d Then
-                view.DeleteRow(Campos.Id)
+            If Not Campos.Id = -1 Then
+                Dim d As Boolean = Result.BorrarIR(Campos)
+
+                If d Then
+                    view.DeleteRow(view.FocusedRowHandle)
+                    RefrescarGridView()
+                End If
+            Else
+                view.DeleteRow(view.FocusedRowHandle)
             End If
         End If
+    End Sub
+
+    Private Sub gdvIR_InitNewRow(sender As Object, e As InitNewRowEventArgs) Handles gdvIR.InitNewRow
+        Dim view As GridView = CType(sender, GridView)
+        view.SetRowCellValue(e.RowHandle, view.Columns("fFechaInicia"), DateTime.Today)
+        view.SetRowCellValue(e.RowHandle, view.Columns("fFechaFinal"), DateTime.Today)
+    End Sub
+
+    Private Sub gdvIR_ValidatingEditor(sender As Object, e As Controls.BaseContainerValidateEditorEventArgs) Handles gdvIR.ValidatingEditor
+        Dim fieldName As String = String.Empty
+        Dim view As GridView = CType(sender, GridView)
+
+        Dim ea As EditFormValidateEditorEventArgs = CType(e, EditFormValidateEditorEventArgs)
+
+        If IsDBNull(ea) Then
+            fieldName = view.FocusedColumn.FieldName
+        Else
+            fieldName = ea.Column.FieldName
+        End If
+
+        If fieldName = "nCodAño" Then
+            e.Valid = Not (String.IsNullOrEmpty(Convert.ToString(e.Value)))
+        ElseIf fieldName = "fFechaInicia"
+            e.Valid = Not (String.IsNullOrEmpty(Convert.ToString(e.Value)))
+        ElseIf fieldName = "fFechaFinal"
+            e.Valid = Not (String.IsNullOrEmpty(Convert.ToString(e.Value)))
+        ElseIf fieldName = "nMinimo"
+            e.Valid = Not (String.IsNullOrEmpty(Convert.ToString(e.Value)))
+        ElseIf fieldName = "nMaximo"
+            e.Valid = Not (String.IsNullOrEmpty(Convert.ToString(e.Value)))
+        ElseIf fieldName = "nPorcAplica"
+            e.Valid = Not (String.IsNullOrEmpty(Convert.ToString(e.Value)))
+        ElseIf fieldName = "nImpuestoBase"
+            e.Valid = Not (String.IsNullOrEmpty(Convert.ToString(e.Value)))
+        ElseIf fieldName = "nSobreExceso"
+            e.Valid = Not (String.IsNullOrEmpty(Convert.ToString(e.Value)))
+        End If
+
+        e.ErrorText = "El valor enterado es invalido."
+    End Sub
+
+    Private Sub gdvIR_InvalidValueException(sender As Object, e As Controls.InvalidValueExceptionEventArgs) Handles gdvIR.InvalidValueException
+        e.ExceptionMode = DevExpress.XtraEditors.Controls.ExceptionMode.DisplayError
+    End Sub
+
+    Private Sub gdvIR_CustomDrawRowIndicator(sender As Object, e As RowIndicatorCustomDrawEventArgs) Handles gdvIR.CustomDrawRowIndicator
+        RowIndicator(sender, e)
     End Sub
 End Class

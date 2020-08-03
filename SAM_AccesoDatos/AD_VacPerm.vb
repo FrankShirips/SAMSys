@@ -95,7 +95,7 @@ Public Class AD_VacPerm
         Dim cmd As New SqlCommand()
 
         If Acciones.Equals("C") Then
-            cmd.CommandText = "SELECT Id, CodConcept, Descripcion FROM ConceptoOTipo"
+            cmd.CommandText = "SELECT Id, Descripcion FROM ConceptoOTipo"
             cmd.CommandType = CommandType.Text
         Else
             If Acciones.Equals("T") Then
@@ -157,7 +157,7 @@ Public Class AD_VacPerm
     End Function
 
     Function ObtenerConceptosOTiposDuracionByID(ByVal tipoDuracion As EN_TipoDuracion,
-                                                         ByVal conceptoTipo As EN_ConceptoDuracion, ByVal Acciones As String) As DataTable
+                                                         ByVal conceptoTipo As EN_ConceptoDuracion, ByVal Acciones As String) As String
         Dim cmd As New SqlCommand()
 
         If Acciones.Equals("C") Then
@@ -174,20 +174,24 @@ Public Class AD_VacPerm
             End If
         End If
 
-        cmd.Connection = AbrirConeccion()
 
-        If cmd.ExecuteNonQuery Then
-            Dim dt As New DataTable
-            Dim da As New SqlDataAdapter(cmd)
+        Dim reader As SqlDataReader
 
-            da.Fill(dt)
-            dt.TableName = "Ids"
+        Try
+            Dim Desc As String = Nothing
 
-            Return dt
-        Else
-            Return Nothing
-        End If
+            cmd.Connection = AbrirConeccion()
+            reader = cmd.ExecuteReader()
 
-        CerrarConeccion()
+            Using reader
+                If reader.Read Then
+                    Desc = reader.GetString(0)
+                End If
+            End Using
+
+            Return Desc
+        Finally
+            CerrarConeccion()
+        End Try
     End Function
 End Class

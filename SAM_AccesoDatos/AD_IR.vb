@@ -61,10 +61,22 @@ Public Class AD_IR
         cmd.Parameters.AddWithValue("@EQUIPOREGISTRA", Environment.MachineName)
         cmd.Parameters.AddWithValue("@USUARIOREGISTRA", 1)
 
+        If Not accion.Equals("A") Then
+            cmd.Parameters.Add("@SMS", SqlDbType.Int).Direction = ParameterDirection.Output
+        End If
+
         If cmd.ExecuteNonQuery Then
-            Return True
-        Else
-            Return False
+            If Not accion.Equals("A") Then
+                Dim sms As Integer = CType(cmd.Parameters("@SMS").Value, Integer)
+
+                If sms = 0 Then
+                    Return False
+                ElseIf sms = 1
+                    Return True
+                End If
+            Else
+                Return True
+            End If
         End If
 
         CerrarConeccion()

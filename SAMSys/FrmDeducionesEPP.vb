@@ -6,6 +6,7 @@ Imports SAM_LogicaNegocio
 Imports System.Configuration
 Imports DevExpress.XtraGrid.Views.Grid
 Imports DevExpress.Utils.Menu
+Imports DevExpress.XtraEditors.DXErrorProvider
 
 Public Class FrmDeducionesEPP
     Dim Result As New LN_DeduccionEPP
@@ -54,6 +55,7 @@ Public Class FrmDeducionesEPP
     ''' <param name="e"></param>
     Private Sub FrmDeducionesClinica_Load(sender As Object, e As EventArgs) Handles MyBase.Load
         dtFecha.Properties.MaxValue = DateTime.Today
+        dtFecha.EditValue = DateTime.Today
         SplitContainerControl.Collapsed = True
         SetDisabled(False)
 
@@ -81,6 +83,28 @@ Public Class FrmDeducionesEPP
         workSheet = SpreadsheetControl.Document.Worksheets(0)
 
         workSheet.Name = "Deducciones EPP"
+
+        EsNullOVacio(dtFecha, "La fecha debe ser introducida.")
+
+        'Dim currentValue As DateTime = DateTime.Today
+
+        'If Not (currentValue.Month = Convert.ToDateTime(dtFecha.EditValue).Month And
+        '  currentValue.Year = Convert.ToDateTime(dtFecha.EditValue).Year) Then
+
+        '    DxErrorProvider.SetError(dtFecha, "Ingresa una fecha dentro del mes actual")
+        '    DxErrorProvider.SetIconAlignment(dtFecha, ErrorIconAlignment.MiddleRight)
+
+        '    Return
+        'Else
+        '    dtFecha.ErrorText = Nothing
+        'End If
+
+        EsNullOVacio(txtNEmpleado, "El numero de Empleado no tiene que ser null o estar vacio.")
+        EsNullOVacio(txtNombre, "El nombre de Empleado no tiene que ser null o estar vacio.")
+        EsNullOVacio(txtProyecto, "El nombre del Proyecto no tiene que ser null o estar vacio.")
+        EsNullOVacio(mmConcepto, "El Concepto de deducion no tiene que ser null o estar vacio.")
+        EsNullOVacio(txtMonto, "El monto deducido no tiene que ser null o estar vacio.")
+
     End Sub
 
     Private Sub bbiNuevo_ItemClick(sender As Object, e As DevExpress.XtraBars.ItemClickEventArgs) Handles bbiNuevo.ItemClick
@@ -90,84 +114,40 @@ Public Class FrmDeducionesEPP
     End Sub
 
     Private Sub btnSave_Click(sender As Object, e As EventArgs) Handles btnSave.Click
-        Dim currentValue As DateTime = DateTime.Today
+        Dim isValid As Boolean = DxValidationProvider.Validate
 
-        If Not (currentValue.Month = Convert.ToDateTime(dtFecha.EditValue).Month And
-          currentValue.Year = Convert.ToDateTime(dtFecha.EditValue).Year) Then
+        If isValid Then
+            Campos.DFecha = CType(dtFecha.EditValue, DateTime)
+            Campos.DN_Empl = txtNEmpleado.Text
+            Campos.DProyecto = txtProyecto.Text
+            Campos.DNombre = txtNombre.Text
+            Campos.DMonto = Convert.ToDecimal(txtMonto.EditValue)
+            Campos.DConcepto = mmConcepto.Text
 
-            DXErrorProvider.SetError(dtFecha, "Ingresa una fecha dentro del mes actual")
-            DXErrorProvider.SetIconAlignment(dtFecha, ErrorIconAlignment.MiddleRight)
+            If flag = 2 Then
+                Dim a As Boolean = Result.ActualizarDeduccionesEPP(Campos)
 
-            Return
-        Else
-            dtFecha.ErrorText = Nothing
-        End If
+                If a Then
+                    XtraMessageBox.Show("Registro Actualizado con Exito!", "Actualización de Deducción de Clinica")
 
-        If String.IsNullOrEmpty(txtNEmpleado.Text) Then
-            EsNullOVacio(txtNEmpleado.Text, txtNEmpleado, "El numero de Empleado no tiene que ser null o estar vacio.")
-            Return
-        Else
-            txtNEmpleado.ErrorText = Nothing
-        End If
+                    RefrescarGridView()
+                    ClearControls()
 
-        If String.IsNullOrEmpty(txtNombre.Text) Then
-            EsNullOVacio(txtNombre.Text, txtNombre, "El nombre de Empleado no tiene que ser null o estar vacio.")
-            Return
-        Else
-            txtNombre.ErrorText = Nothing
-        End If
+                    SplitContainerControl.Collapsed = True
+                    SetDisabled(False)
+                    bbiCancelar.Enabled = False
 
-        If String.IsNullOrEmpty(txtProyecto.Text) Then
-            EsNullOVacio(txtProyecto.Text, txtProyecto, "El nombre del Proyecto no tiene que ser null o estar vacio.")
-            Return
-        Else
-            txtProyecto.ErrorText = Nothing
-        End If
+                    flag = Nothing
+                End If
+            Else
+                Dim i As Boolean = Result.InsertDeducionesEPP(Campos)
 
-        If String.IsNullOrEmpty(mmConcepto.Text) Then
-            EsNullOVacio(mmConcepto.Text, mmConcepto, "El Concepto de deducion no tiene que ser null o estar vacio.")
-            Return
-        Else
-            mmConcepto.ErrorText = Nothing
-        End If
+                If i Then
+                    XtraMessageBox.Show("Registro Agregado con Exito!", "Registro de Deducción de Clinica")
 
-        If String.IsNullOrEmpty(CType(txtMonto.EditValue, String)) Then
-            EsNullOVacio(CType(txtMonto.EditValue, String), txtMonto, "El monto deducido no tiene que ser null o estar vacio.")
-            Return
-        Else
-            txtMonto.ErrorText = Nothing
-        End If
-
-        Campos.DFecha = CType(dtFecha.EditValue, DateTime)
-        Campos.DN_Empl = txtNEmpleado.Text
-        Campos.DProyecto = txtProyecto.Text
-        Campos.DNombre = txtNombre.Text
-        Campos.DMonto = Convert.ToDecimal(txtMonto.EditValue)
-        Campos.DConcepto = mmConcepto.Text
-
-        If flag = 2 Then
-            Dim a As Boolean = Result.ActualizarDeduccionesEPP(Campos)
-
-            If a Then
-                XtraMessageBox.Show("Registro Actualizado con Exito!", "Actualización de Deducción de Clinica")
-
-                RefrescarGridView()
-                ClearControls()
-
-                SplitContainerControl.Collapsed = True
-                SetDisabled(False)
-                bbiCancelar.Enabled = False
-
-                flag = Nothing
-            End If
-        Else
-            Dim i As Boolean = Result.InsertDeducionesEPP(Campos)
-
-            If i Then
-                XtraMessageBox.Show("Registro Agregado con Exito!", "Registro de Deducción de Clinica")
-
-                RefrescarGridView()
-                ClearControls()
+                    RefrescarGridView()
+                    ClearControls()
+                End If
             End If
         End If
     End Sub
@@ -378,14 +358,16 @@ Public Class FrmDeducionesEPP
 
     Private Sub txtNombre_KeyPress(sender As Object, e As KeyPressEventArgs) Handles txtNombre.KeyPress
         If Not Char.IsLetter(e.KeyChar) And Not Char.IsControl(e.KeyChar) And Not Char.IsWhiteSpace(e.KeyChar) Then
-            DxErrorProvider.SetError(dtFecha, "El nombre debe ser solo letras y espacios.")
-            DxErrorProvider.SetIconAlignment(dtFecha, ErrorIconAlignment.MiddleRight)
             e.Handled = True
         End If
     End Sub
 
-    Sub EsNullOVacio(ByVal textControl As String, ByVal control As Object, ByVal mensaje As String)
-        DXErrorProvider.SetError(CType(control, Control), mensaje)
-        DXErrorProvider.SetIconAlignment(CType(control, Control), ErrorIconAlignment.MiddleRight)
+    Sub EsNullOVacio(ByVal control As Object, ByVal mensaje As String)
+        Dim notEmptyValidationRule As New ConditionValidationRule()
+        notEmptyValidationRule.ConditionOperator = ConditionOperator.IsNotBlank
+        notEmptyValidationRule.ErrorText = mensaje
+
+        DxValidationProvider.SetValidationRule(CType(control, Control), notEmptyValidationRule)
+        DxValidationProvider.SetIconAlignment(CType(control, Control), ErrorIconAlignment.MiddleRight)
     End Sub
 End Class
